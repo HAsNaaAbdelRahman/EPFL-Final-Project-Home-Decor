@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sign Up</title>
+    <link rel="stylesheet" href="../static/css/Login.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <div class="sign-up-form">
+        <strong>Sign Up</strong>
+        <form id="signup-form" action="" method="post">
+          <input type="text" name="fullname" id="fullname" placeholder="Full Name" required />
+          <span id="fullname-error" class="error-message">Please enter a valid full name.</span>
+
+          <input type="email" name="email" id="email" placeholder="Example@gmail.com" required />
+          <span id="email-error" class="error-message">Please enter a valid email address.</span>
+
+          <input type="password" name="password" id="password" placeholder="Password" required />
+          <span id="password-error" class="error-message">Password must be at least 6 characters.</span>
+
+          <input type="text" name="address" id="address" placeholder="Address" required />
+          <span id="address-error" class="error-message">Please enter your address.</span>
+
+          <input type="text" name="phone" id="phone" placeholder="Phone number" required />
+          <span id="phone-error" class="error-message">Please enter a valid phone number.</span>
+
+          <input type="text" name="security_question" id="security_question" placeholder="What is your favourite song name" required />
+          <span id="security_question-error" class="error-message">Please answer the security question.</span>
+
+          <input type="submit" value="Sign Up"  />
+        </form>
+        <p class="error-message">{{ error }}</p>
+        <div class="form-btns">
+          <a href="" class="already-account">Already Have An Account?</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
