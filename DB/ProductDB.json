@@ -1,0 +1,206 @@
+[
+    {
+
+        "id":1,
+        "name":"Asili Wooden Vase",
+        "type":"Vases",
+        "price": "$405.00"
+
+    },
+
+      {
+
+        "id":3,
+        "name":"Melanie Wooden Vase",
+        "type":"Vases",
+        "price": "$460.00"
+
+    },
+    
+
+      {
+
+        "id":4,
+        "name":"Miniature Wooden Vases",
+        "type":"Vases",
+        "price": "$500.00"
+
+    },
+    
+      {
+
+        "id":5,
+        "name":"Handcraft Wooden Vase",
+        "type":"Vases",
+        "price": "$350.00"
+
+    },
+    
+      {
+
+        "id":6,
+        "name":"Paulownia Wood Vase",
+        "type":"Vases",
+        "price": "$150.00"
+
+    },
+    
+      {
+
+        "id":7,
+        "name":"Abstract Fusion",
+        "type":"Wall Art",
+        "price": "$250.00"
+
+    }
+    ,
+    
+      {
+
+        "id":8,
+        "name":"Nostalgic Artistry",
+        "type":"Wall Art",
+        "price": "$300.00"
+
+    }
+       ,
+    
+      {
+
+        "id":9,
+        "name":"Golden Menents",
+        "type":"Wall Art",
+        "price": "$100.00"
+
+    }
+           ,
+    
+      {
+
+        "id":10,
+        "name":"Large Boho Wall Art",
+        "type":"Wall Art",
+        "price": "$500.00"
+
+    }
+
+    ,
+    
+      {
+
+        "id":11,
+        "name":"Art Bauhuas",
+        "type":"Wall Art",
+        "price": "$600.00"
+
+    }
+
+    ,
+    
+      {
+
+        "id":12,
+        "name":"Mid Century Modern",
+        "type":"Wall Art",
+        "price": "$450.00"
+
+    }
+
+        ,
+    
+      {
+
+        "id":13,
+        "name":"Wedding Candles",
+        "type":"Candles",
+        "price": "$200.00"
+
+    }
+
+     ,
+    
+      {
+
+        "id":14,
+        "name":"Ribbed Pillar Candles",
+        "type":"Candles",
+        "price": "$150.00"
+
+    }
+
+         ,
+    
+      {
+
+        "id":15,
+        "name":"Modern Wedding Candles",
+        "type":"Candles",
+        "price": "$150.00"
+
+    }
+
+             ,
+    
+      {
+
+        "id":16,
+        "name":"Classic Candles",
+        "type":"Candles",
+        "price": "$80.00"
+
+    }
+
+                 ,
+    
+      {
+
+        "id":17,
+        "name":"Dark Classic Candles",
+        "type":"Candles",
+        "price": "$60.00"
+
+    }
+
+                     ,
+    
+      {
+
+        "id":18,
+        "name":"White Classic Candles",
+        "type":"Candles",
+        "price": "$100.00"
+
+    }
+
+                         ,
+    
+      {
+
+        "id":19,
+        "name":"Gold Light Orb",
+        "type":"Lighting",
+        "price": "$100.00"
+
+    }
+
+                             ,
+    
+      {
+
+        "id":20,
+        "name":"Dark Light Orb",
+        "type":"Lighting",
+        "price": "$150.00"
+
+    }
+     ,
+    
+      {
+
+        "id":21,
+        "name":"Modern Dark Light Orb",
+        "type":"Lighting",
+        "price": "$150.00"
+
+    }
+]
