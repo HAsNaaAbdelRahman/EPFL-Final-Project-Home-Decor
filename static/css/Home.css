@@ -17,6 +17,17 @@
 
 }
 
+html , body {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+section,
+header,
+footer {
+  scroll-padding-top: 80px;
+
+}
 
 .section__container {
     max-width: var(--max-width);
@@ -212,7 +223,7 @@ nav {
     
 }
 
-.about__btn , .shop__btn {
+.about__btn , .shop__btn , .more__btn {
     width: fit-content;
     padding: .75rem 1.5rem;
     outline: none;
@@ -224,6 +235,10 @@ nav {
     border-radius: 5px;
     transition: 0.3s;
     cursor: pointer;
+}
+
+.more__btn {
+    margin-left: 50% ;
 }
 
 
@@ -419,7 +434,9 @@ nav {
     .footer__container{
         grid-template-columns: repeat(2 , 1fr);
     }
-
+    .more__btn {
+        margin-left: -20% ;
+    }
 }
 @media (width > 1024px){
     .deals__container {
@@ -503,5 +520,9 @@ nav {
 
     .product__grid {
     grid-template-columns: repeat(3 , 1fr);
+}
+
+.more__btn {
+    margin-left: 40% ;
 }
 }
