@@ -3,7 +3,7 @@ import bcrypt
 import json
 
 class User:
-    def __init__(self , name , email , password , address , phone , security_question):
+    def __init__(self, name, email, password, address, phone, security_question):
         self.id = str(uuid.uuid4())
         self.name = name
         self.email = email
@@ -13,35 +13,33 @@ class User:
         self.security_question = security_question
         self.cart = {}
         self.orders = []
-        
-        def hash_password(self):
-            return bcrypt.hashpw(self.password.encode('utf-8'), bcrypt.gensalt())
-        
-        def format_data(self, hashed_password):
 
-            users_list = []
-            data = {
-                "name": self.name,
-                "email": self.email,
-                "id": self.id,
-                "password": hashed_password.decode('utf-8'),
-                "address": self.address,
-                "phone": self.phone,
-                "security_question": self.security_question,
-                "role": self.role,
-                "wishlist": self.wishlist,
-                "cart": self.cart,
-                "orders": self.orders
-            }
-            try:
-                with open('usersDB.json', 'r') as file:
-                    users_list = json.load(file)
-            except (FileNotFoundError, json.JSONDecodeError):
-                pass
+    def hash_password(self):
+        hashed = bcrypt.hashpw(self.password.encode('utf-8'), bcrypt.gensalt())
+        return hashed.decode('utf-8')
 
-            users_list.append(data)
-            with open("usersDB.json", "w") as file:
-                json.dump(users_list, file, indent=4)
+    def format_data(self, hashed_password):
+        users_list = []
+        data = {
+            "name": self.name,
+            "email": self.email,
+            "id": self.id,
+            "password": hashed_password,
+            "address": self.address,
+            "phone": self.phone,
+            "security_question": self.security_question,
+            "cart": self.cart,
+            "orders": self.orders
+        }
+        try:
+            with open('usersDB.json', 'r') as file:
+                users_list = json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
+
+        users_list.append(data)
+        with open("usersDB.json", "w") as file:
+            json.dump(users_list, file, indent=4)
 
     @staticmethod
     def update_user_data(user_id, updated_data):
