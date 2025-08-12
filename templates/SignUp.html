@@ -13,7 +13,7 @@
     <div class="form">
       <div class="sign-up-form">
         <strong>Sign Up</strong>
-        <form id="signup-form" action="" method="post">
+        <form id="signup-form" action="/signup" method="post">
           <input type="text" name="fullname" id="fullname" placeholder="Full Name" required />
           <span id="fullname-error" class="error-message">Please enter a valid full name.</span>
 
@@ -36,9 +36,10 @@
         </form>
         <p class="error-message">{{ error }}</p>
         <div class="form-btns">
-          <a href="" class="already-account">Already Have An Account?</a>
+          <a href="/login" class="already-account">Already Have An Account?</a>
         </div>
       </div>
     </div>
+    <script src="../static/js/signup.js"></script>
   </body>
 </html>
