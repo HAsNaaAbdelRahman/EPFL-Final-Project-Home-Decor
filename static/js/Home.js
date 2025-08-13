@@ -1,6 +1,26 @@
 const menuBtn = document.getElementById('menu_btn');
 const navLinks = document.getElementById('nav-links');
 
+document.addEventListener("DOMContentLoaded", function () {
+    const userDropdown = document.querySelector(".user-dropdown");
+
+    if (userDropdown) {
+        const userIcon = userDropdown.querySelector(".user-icon");
+
+        userIcon.addEventListener("click", function (e) {
+            e.preventDefault();
+            userDropdown.classList.toggle("active");
+        });
+
+        document.addEventListener("click", function (e) {
+            if (!userDropdown.contains(e.target)) {
+                userDropdown.classList.remove("active");
+            }
+        });
+    }
+});
+
+
 if (menuBtn && navLinks) {
     const menuBtnIcon = menuBtn.querySelector('i');
 
@@ -47,3 +67,4 @@ if (user) {
 
 
 }
+
