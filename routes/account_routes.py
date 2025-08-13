@@ -105,7 +105,7 @@ def account_routes(app):
         
         return render_template('signup.html')
 
-    @app.route('/logout')
+    @app.route('/logout' , methods=['POST' , 'GET'])
     def logout():
         session.clear()
         if request.is_json:
