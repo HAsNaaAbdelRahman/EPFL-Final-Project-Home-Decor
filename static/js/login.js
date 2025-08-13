@@ -1,37 +1,89 @@
-document.querySelector('form').addEventListener("submit" , function(e)
-{
-    e.preventDefault();
-})
+document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('errorMessage');
+    const loginButton = loginForm.querySelector('input[type="submit"]');
 
-const email = document.querySelector('input[name = "email"]')
-const password = document.querySelector('input[name = "password"]')
+    checkInitialAuthState();
 
-fetch('/login' , {
- method: 'POST',
- body: new URLSearchParams({email , password} ),
- headers: {
-     'Content-Type': 'application/x-www-form-urlencoded',
- },
-})
-.then(response => response.json())
-.then(data => {
-    if(data.id) {
-        localStorage.setItem('user' , JSON.stringify(data));
-        window.location.href = '/home';
-    }else {
-        alert(data.error);
+    async function handleLogin(event) {
+        event.preventDefault();
+        
+        loginButton.disabled = true;
+        loginButton.value = 'login...';
+        
+        const email = loginForm.email.value.trim();
+        const password = loginForm.password.value;
+        
+        if (!email || !password) {
+            showError('Please fill in all fields');
+            resetLoginButton();
+            return;
+        }
+
+        try {
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    email: email,
+                    password: password 
+                })
+            });
+
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                throw new Error('Invalid server response');
+            }
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error|| 'Login failed');
+            }
+
+            if (data.success) {
+                localStorage.setItem('user', JSON.stringify(data.user));
+                
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 1000);
+            }
+            
+        } catch (error) {
+            resetLoginButton();
+        }
     }
-})
-.catch(() => {
-  alert('An error occurred while logging in.');  
-});
 
-function checkUserSession() {
-  const user = localStorage.getItem('user');
-  if (user) {
-    const userData = JSON.parse(user);
-  } else {
-    
-  }
-}
-window.onload = checkUserSession;
+    function checkInitialAuthState() {
+        const user = localStorage.getItem('user');
+        if (user) {
+            window.location.href = '/';
+        }
+    }
+
+    function resetLoginButton() {
+        loginButton.disabled = false;
+        loginButton.value = ' login';
+    }
+
+    function showError(message) {
+        errorMessage.textContent = message;
+        errorMessage.className = 'error-message error';
+        errorMessage.style.display = 'block';
+        
+        setTimeout(() => {
+            errorMessage.style.display = 'none';
+        }, 5000);
+    }
+
+    function showSuccess(message) {
+        errorMessage.textContent = message;
+        errorMessage.className = 'error-message success';
+        errorMessage.style.display = 'block';
+    }
+
+    loginForm.addEventListener('submit', handleLogin);
+});
