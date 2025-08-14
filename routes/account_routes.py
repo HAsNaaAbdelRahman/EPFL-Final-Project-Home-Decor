@@ -107,6 +107,7 @@ def account_routes(app):
     
     @app.route('/profile' , methods = ['POST' , 'GET'])
     def profile():
+        
         return render_template('profile.html')
 
     @app.route('/logout' , methods=['POST' , 'GET'])
