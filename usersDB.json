@@ -20,5 +20,16 @@
         "security_question": "Obsession",
         "cart": {},
         "orders": []
+    },
+    {
+        "name": "Aya Ahmed",
+        "email": "aya_ahmend@gmail.com",
+        "id": "a5502b16-10d9-437a-a471-81f0efde60a0",
+        "password": "$2b$12$44OYwDK4fKTVH7sLv252meHxbWy9Ypi8PGUt8eQnEjOdIQUuicYgK",
+        "address": "Cairo, Egypt",
+        "phone": "01145963148",
+        "security_question": "Love Story",
+        "cart": {},
+        "orders": []
     }
 ]
