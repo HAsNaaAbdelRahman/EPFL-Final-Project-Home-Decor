@@ -50,7 +50,10 @@ def account_routes(app):
                     'user': {
                         'id': user['id'],
                         'name': user['name'],
-                        'email': user['email']
+                        'email': user['email'],
+                        'address': user['address'],
+                        'phone': user['phone']
+
                     }
                 })
             else:
@@ -107,13 +110,34 @@ def account_routes(app):
     
     @app.route('/profile' , methods = ['POST' , 'GET'])
     def profile():
-        
-        return render_template('profile.html')
+        try:
+            
+                user_id = session.get('user_id')
+                users_list = []
+            
+                try:
+                    with open('usersDB.json', 'r') as file:
+                        users_list = json.load(file)
+                except (FileNotFoundError, json.JSONDecodeError):
+                    return render_template('profile.html', error='User data not found')
 
-    @app.route('/logout' , methods=['POST' , 'GET'])
+                current_user = next((user for user in users_list if user['id'] == user_id), None)
+                
+                if current_user:
+                    user_data = {
+                        'name': current_user.get('name'),
+                        'email': current_user.get('email'),
+                        'address': current_user.get('address', ''),  
+                        'phone': current_user.get('phone', ''),
+                    }
+                
+                return render_template('profile.html', error='User not found')
+        except Exception as e:
+                     
+                     app.logger.error(f"Error in profile route: {str(e)}")
+                     return render_template('profile.html', error='An error occurred'), 500
+
+    @app.route('/logout')
     def logout():
-        session.clear()
-        if request.is_json:
-            return jsonify({'message': 'Logged out successfully'})
-        else:
-            return redirect(url_for('home'))
+        session.pop('user_id', None)     
+        return redirect(url_for('home'))
