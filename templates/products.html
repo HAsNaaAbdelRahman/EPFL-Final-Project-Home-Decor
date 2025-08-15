@@ -3,19 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Decor</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../static/images/logo-2.png" />
-    <link rel="stylesheet" href="../static/css/home.css">
-    <link rel="stylesheet" href="../static/css/profile.css">
-
+    <title>Our Products</title>
+    <link rel="stylesheet" href="../static/css/products.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-
-    
 </head>
 <body>
-   <nav>
+    <nav>
         <div class="nav_header">
             <div class="nav_logo">
                 <a href='/' class="logo">Home Decor</a>
@@ -24,13 +18,7 @@
                 <i class="ri-menu-line"></i>
                 </div>
             </div>
-            <ul class="nav__links" id="nav-links">
-                <li><a href='/'>Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-  
+     
      <div class="nav__icons">
             <span class="user-dropdown">
                 <a href="#" class="user-icon">
@@ -40,7 +28,7 @@
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/login">Login</a></li>
                     <li><a href="/signup">Sign Up</a></li>
-                    <li><a  href="/logout">Logout</a></li>
+                    <li><a href="/logout" class="logout-button">Logout</a></li>
                 </ul>
             </span>
             <span><a href="#"><i class="ri-shopping-cart-2-line"></i></a></span>
@@ -50,21 +38,31 @@
         
     </nav>
 
-    <div class="profilesection">
+        <section class="section__container product__container" id="products">
+        <h2 class="section__header"> Our Products </h2>     
+        
+        <div class="filter">
+            <span><button class="shop__btn">All</button></span>
+            <span><button class="shop__btn">Vases</button></span>
+            <span><button class="shop__btn">Wall Art</button></span>
+            <span><button class="shop__btn">Candles</button></span>
+            <span><button class="shop__btn">Lighting</button></span>
 
-     
-    <div class="profile">
-        <h1>User Profile</h1>
-        <div id="profile-info" class="profile-info"></div>
-        <div id="orders" class="orders">
-            <h2>Past Orders</h2>
-            <div id="orders-list"></div>
         </div>
-        <p><a href="/" class="button">Back to Home</a> <a href="/logout" class="logout-button">Logout</a></p>
-    </div>
+     
+        <div class="product__grid">
+        
 
-    
+            <div class="product__card">
+                
+                <br><br>
+                <span><button class="shop__btn">  Add To Cart <i class="ri-shopping-cart-2-line"></i> </button></span>
+                </div>
+        </div>
 
+        
+       
+    </section>
 
 <footer class="footer" id="contact">
 <div class="section__container footer__container">
@@ -95,7 +93,7 @@
          <ul class="footer__links">
             <li><a href="#">Address: Egypt , Cairo</a></li>
             <li><a href="#">Phone: +20 00 000 000</a></li>
-            <li><a href="#">Hours: 09:00 - 12:00 , Mon - Sat</a></li> 
+            <li><a href="#">Hours: 09:00 - 12:00 , Mon - Sat</a></li>
 
          </ul>
     </div>
@@ -110,12 +108,6 @@
         Designed by Hasnaa Abdelrahman
     </div>
 </footer>
-
-<script src="../static/js/profile.js"></script>
-<script src="../static/js/logout.js"></script>
-
-<script src="https://unpkg.com/scrollreveal"></script>
-
 
 </body>
 </html>

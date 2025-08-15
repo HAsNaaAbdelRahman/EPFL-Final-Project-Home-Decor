@@ -1,25 +1,26 @@
 const menuBtn = document.getElementById('menu_btn');
 const navLinks = document.getElementById('nav-links');
 
-document.addEventListener("DOMContentLoaded", function () {
+
+document.addEventListener("DOMContentLoaded", function() {
     const userDropdown = document.querySelector(".user-dropdown");
+    const userIcon = document.querySelector(".user-icon");
 
     if (userDropdown) {
-        const userIcon = userDropdown.querySelector(".user-icon");
-
-        userIcon.addEventListener("click", function (e) {
+        userIcon.addEventListener("click", function(e) {
             e.preventDefault();
-            userDropdown.classList.toggle("active");
+            e.stopPropagation();
+            const dropdown = this.closest('.user-dropdown').querySelector('.dropdown-menu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         });
 
-        document.addEventListener("click", function (e) {
+        document.addEventListener("click", function(e) {
             if (!userDropdown.contains(e.target)) {
-                userDropdown.classList.remove("active");
+                userDropdown.querySelector('.dropdown-menu').style.display = 'none';
             }
         });
     }
 });
-
 
 if (menuBtn && navLinks) {
     const menuBtnIcon = menuBtn.querySelector('i');
@@ -36,6 +37,9 @@ if (menuBtn && navLinks) {
         });
     });
 }
+
+
+
 
 function checkAuth() {
     const user = localStorage.getItem('user');

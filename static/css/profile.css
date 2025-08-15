@@ -33,7 +33,7 @@ h1, h2 {
 }
 
 .logout-button {
-        width: fit-content;
+    width: fit-content;
     padding: .75rem 1.5rem;
     outline: none;
     border: none;

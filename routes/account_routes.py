@@ -57,11 +57,9 @@ def account_routes(app):
                     }
                 })
             else:
-                print("Login failed - Invalid credentials") 
                 return jsonify({'error': 'Invalid email or password'}), 401
                 
         except Exception as e:
-            print(f"Server error: {str(e)}")  
             return jsonify({'error': 'Internal server error'}), 500
 
 
