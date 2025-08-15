@@ -45,11 +45,13 @@ function checkAuth() {
         const userData = JSON.parse(user);
         if (userIcon) {
             userIcon.closest('a').href = '/profile';
-            userIcon.closest('a').querySelector('i').className = 'ri-user-fill'; // تغيير الأيقونة عند التسجيل
+            userIcon.closest('a').querySelector('i').className = 'ri-user-fill'; 
         }
     } else {
         if (userIcon) {
             userIcon.closest('a').href = '/login';
+            userIcon.closest('a').querySelector('i').className = 'ri-user-line'; 
+
         }
     }
 }
