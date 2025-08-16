@@ -19,10 +19,7 @@ def account_routes(app):
             
     @app.route('/login', methods=['GET', 'POST'])
     def login():
-        
         if request.method == 'GET':
-        
-            
             return render_template('login.html')
         
         try:
@@ -43,7 +40,10 @@ def account_routes(app):
             user = next((u for u in users if u['email'] == email), None)
             
             if user and bcrypt.checkpw(password.encode('utf-8'), user['password'].encode('utf-8')):
+                # سيشن يخلص مع قفل البراوزر
+                session.permanent = False  
                 session['user_id'] = user['id']
+
                 print(f"Login successful for user: {user['email']}") 
                 return jsonify({
                     'success': True,
@@ -53,13 +53,13 @@ def account_routes(app):
                         'email': user['email'],
                         'address': user['address'],
                         'phone': user['phone']
-
                     }
                 })
             else:
                 return jsonify({'error': 'Invalid email or password'}), 401
                 
         except Exception as e:
+            app.logger.error(f"Error in login route: {str(e)}")
             return jsonify({'error': 'Internal server error'}), 500
 
 
@@ -106,36 +106,27 @@ def account_routes(app):
         
         return render_template('signup.html')
     
-    @app.route('/profile' , methods = ['POST' , 'GET'])
+    @app.route('/profile' , methods=['GET'])
     def profile():
         try:
-            
-                user_id = session.get('user_id')
-                users_list = []
-            
-                try:
-                    with open('usersDB.json', 'r') as file:
-                        users_list = json.load(file)
-                except (FileNotFoundError, json.JSONDecodeError):
-                    return render_template('profile.html', error='User data not found')
+            user_id = session.get('user_id')
+            if not user_id:
+                return redirect(url_for('login'))
 
-                current_user = next((user for user in users_list if user['id'] == user_id), None)
+            users_list = load_users()
+            current_user = next((user for user in users_list if user['id'] == user_id), None)
                 
-                if current_user:
-                    user_data = {
-                        'name': current_user.get('name'),
-                        'email': current_user.get('email'),
-                        'address': current_user.get('address', ''),  
-                        'phone': current_user.get('phone', ''),
-                    }
-                
+            if current_user:
+                return render_template('profile.html', user=current_user)
+            else:
                 return render_template('profile.html', error='User not found')
+
         except Exception as e:
-                     
-                     app.logger.error(f"Error in profile route: {str(e)}")
-                     return render_template('profile.html', error='An error occurred'), 500
+            app.logger.error(f"Error in profile route: {str(e)}")
+            return render_template('profile.html', error='An error occurred'), 500
 
     @app.route('/logout')
     def logout():
-        session.pop('user_id', None)     
+        session.pop('user_id', None)    
+        session.clear() 
         return redirect(url_for('home'))

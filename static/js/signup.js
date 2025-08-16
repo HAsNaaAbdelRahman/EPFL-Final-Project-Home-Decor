@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
         security_question: document.getElementById('security_question-error')
     };
 
-    // Validation functions
     function validateFullName(name) {
         return name.trim().length >= 3;
     }
@@ -88,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return isValid;
     }
 
-    // Real-time validation on input
     Object.entries(inputs).forEach(([key, input]) => {
         input.addEventListener('input', () => {
             errorElements[key].style.display = 'none';

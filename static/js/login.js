@@ -87,3 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loginForm.addEventListener('submit', handleLogin);
 });
+
+window.addEventListener('load', () => {
+    localStorage.removeItem('user');
+});
