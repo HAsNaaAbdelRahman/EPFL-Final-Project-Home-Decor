@@ -5,6 +5,15 @@ const navLinks = document.getElementById('nav-links');
 document.addEventListener("DOMContentLoaded", function() {
     const userDropdown = document.querySelector(".user-dropdown");
     const userIcon = document.querySelector(".user-icon");
+    const shopNowBtn = document.querySelector('.shop__btn');
+    const learnMoreBtn = document.querySelector('.learn__more-btn');
+    if (learnMoreBtn) {
+        learnMoreBtn.addEventListener('click', () => {
+            window.location.href = '/about';
+        });
+    }
+ 
+    // =========== User Dropdown Functionality ===========
 
     if (userDropdown) {
         userIcon.addEventListener("click", function(e) {
@@ -20,7 +29,33 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+    if (shopNowBtn) {
+        shopNowBtn.addEventListener('click', () => {
+            window.location.href = '/products';
+        });
+    }
+
+    const moreBtn = document.querySelector('.more__btn');
+    if (moreBtn) {
+        moreBtn.addEventListener('click', () => {
+            window.location.href = '/products';
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const shopNowBtn = document.querySelector('.shop__btn');
+    
+    if (shopNowBtn) {
+        shopNowBtn.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            window.location.href = '/products';
+        });
+    }
 });
+    
+});
+
+    // =========== Navbar Menu Button Functionality ===========
 
 if (menuBtn && navLinks) {
     const menuBtnIcon = menuBtn.querySelector('i');
@@ -38,7 +73,7 @@ if (menuBtn && navLinks) {
     });
 }
 
-
+// =========== Check Authentication and Update User Icon ===========
 
 
 function checkAuth() {
