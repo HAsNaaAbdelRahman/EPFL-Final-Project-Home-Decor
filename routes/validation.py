@@ -1,5 +1,6 @@
 import bcrypt
 from email_validator import validate_email, EmailNotValidError 
+import re
 
 # Function to validate email format
 def email_validation(email):
@@ -20,16 +21,15 @@ def validateFullName(name):
         return False
     if len(name) < 7:
         return False
-    if any(char in name for char in '@#$%^&*()_+={}[]|\\;:\'",<>?`~'):
+    if any(char in name for char in '[~`@#$%^*+=<>?/\\|]'):
         return False
     return True
 # Function to validate address format
 def validateAddress(address):
-    if address.strip() == '':
+    if not address or address.strip() == '':
         return False
-    if len(address) < 3:
+    if len(address.strip()) < 3:
         return False
-    if any(char in address for char in '@#$%^&*()_+={}[]|\\;:\'",<>?`~'):
+    if re.search(r"[~`@#$%^*+=<>?/\\|]", address):
         return False
-    
     return True

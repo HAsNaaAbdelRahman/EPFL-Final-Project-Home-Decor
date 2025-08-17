@@ -88,10 +88,8 @@ def account_routes(app):
         if request.method == 'POST':
 
             data = request.get_json() if request.is_json else request.form
-            print("Received signup data:", data)
-
             name = data.get('fullname')
-            email = data.get('email')
+            email = data.get('email' , '').strip()
             password = data.get('password')
             address = data.get('address')
             phone = data.get('phone')
@@ -110,7 +108,6 @@ def account_routes(app):
                 return jsonify({'error': 'Password must be at least 6 characters'}), 400
 
             email_valid = email_validation(email)
-            print("Email validation result:", email_validation(email))
 
             if not email_valid[0]:
                 return jsonify({'error': email_valid[1]}), 400
@@ -163,4 +160,4 @@ def account_routes(app):
     def logout():
         session.pop('user_id', None)    
         session.clear() 
-        return redirect(url_for('home'))
+        return redirect(url_for('login'))
