@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         phone: document.getElementById('phone-error'),
         security_question: document.getElementById('security_question-error')
     };
+    // ======================== Validation Functions ========================
 
     function validateFullName(name) {
         if(name.trim() === '') {
@@ -96,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (!validatePhone(inputs.phone.value)) {
-            errorElements.phone.textContent = 'Please enter a valid phone number (13 digits)';
+            errorElements.phone.textContent = 'Please enter a valid phone number (11 digits)';
             errorElements.phone.style.display = 'block';
             isValid = false;
         }
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         return isValid;
     }
+    
 
     Object.entries(inputs).forEach(([key, input]) => {
         input.addEventListener('input', () => {
