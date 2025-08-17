@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="../static/css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-
 </head>
 <body>
 <nav>
@@ -25,59 +23,103 @@
             <ul class="nav__links" id="nav-links">
                 <li><a href='/'>Home</a></li>
                 <li><a href="/products">Products</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="/about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
   
      <div class="nav__icons">
             <span class="user-dropdown">
-                <a href="#" class="user-icon">
+                <a href="/profile" class="user-icon">
                     <i class="ri-user-line"></i>
                 </a>
-                <ul class="dropdown-menu">
-                    <li><a href="/profile">Profile</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/signup">Sign Up</a></li>
-                    <li><a class="logout-button" href="/logout">Logout</a></li>
-                </ul>
+         
             </span>
             <span><a href="/cart"><i class="ri-shopping-cart-2-line"></i></a></span>
-            <span><a href="#"><i class="ri-heart-line"></i></a></span>
         </div>
-
-        
     </nav>
 
+<section class="checkoutsection">
+  <h2 class="section__header">Checkout</h2>
+
+  <div class="containercheck">
+    <div class="billing-details">
+      <h2>Order Details</h2>
+      <form id="checkout-form" class="checkout__form" action="#" method="POST">
+        <div class="form__group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+        </div>
+
+        <div class="form__group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+
+        <div class="form__group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required placeholder="phone">
+        </div>
+
+        <div class="form__group">
+          <label for="address">Shipping Address</label>
+          <textarea id="address" name="address" required placeholder="Street, City, Country"></textarea>
+        </div>
+      </form>
+    </div>
+
+    <div class="cart-totals">
+      <h2>Cart Totals</h2>
+
+      <div class="cart-table-wrapper">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty</th>
+              <th>Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items-table">
+          </tbody>
+        </table>
+        <div id="cart-empty" style="display:none; padding:0.75rem 0;">Your cart is empty.</div>
+      </div>
+
+      <div class="totals">
+        <div class="total-row">
+          <span>Subtotal</span>
+          <span id="subtotal">$0.00</span>
+        </div>
+        <div class="total-row">
+          <span>Shipping</span>
+          <span id="shipping">$20.00</span>
+        </div>
+        <div class="total-row">
+          <strong>Total</strong>
+          <strong id="total">$0.00</strong>
+        </div>
+      </div>
+
+      <button type="button" class="checkout__btn place-order">Place Order</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="success-dialog" id="successDialog">
+    <div class="success-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+    </div>
+    <h3>Order Created Successfully!</h3>
+    <p>Your order details will be sent to your email.</p>
+    <button onclick="hideSuccessDialog()">OK</button>
+  </div>
 </section>
 
-<section class="checkout section__container">
-    <div id="cart-items"></div>
-    <h2 class="section__header">Checkout</h2>
-  <form id="checkout-form" class="checkout__form" action="#" method="POST">
-    <div class="form__group">
-      <label for="fullName">Full Name</label>
-      <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
-    </div>
-    <div class="form__group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required placeholder="you@example.com">
-    </div>
-    <div class="form__group">
-      <label for="phone">Phone</label>
-      <input type="phone" id="phone" name="phone" required placeholder="phone">
-    </div>
-    
-    <div class="form__group">
-      <label for="address">Shipping Address</label>
-      <textarea id="address" name="address" required placeholder="Street, City, Country"></textarea>
-    </div>
-    
-
-
-    <button type="submit" class="checkout__btn place-order">Place Order</button>
-  </form>
-  
-</section>
 <footer class="footer" id="contact">
 <div class="section__container footer__container">
     <div class="footer__col">
@@ -85,8 +127,6 @@
         <a href="#" class="logo">Home Decor</a>
     </div>
     <p> <i>  your home decor with the perfect touch. </i></p>
- 
-
     </div>
     <div class="footer__col">
         <h4>Follow me</h4>
@@ -108,7 +148,6 @@
             <li><a href="#">Address: Egypt , Cairo</a></li>
             <li><a href="#">Phone: +20 00 000 000</a></li>
             <li><a href="#">Hours: 09:00 - 12:00 , Mon - Sat</a></li>
-
          </ul>
     </div>
         <div class="footer__col">
@@ -121,6 +160,7 @@
     <div class="footer__bar">
         Designed by Hasnaa Abdelrahman
     </div>
+</footer>
 
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="../static/js/checkout.js"></script>
