@@ -20,36 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // ======================== Validation Functions ========================
 
     function validateFullName(name) {
-        if(name.trim() === '') {
-            return false;
-        }
-        if(name.includes('@#$%^&*()_+={}[]|\\;:\'",<>?`~')) {
-            return false;
-        }
-        return name.trim().length >= 7;
+        return name.trim().length >= 7 && !/[~`@#$%^*+=<>?/\\|]/.test(name);
     }
 
     function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const re = /^[^\s@]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return re.test(email);
     }
 
     function validatePassword(password) {
-        if(password.trim() === '') {
-            return false;
-        }
-        return password.length >= 6;
+        return password.trim().length >= 6;
     }
 
     function validateAddress(address) {
-        if(address.trim() === '') {
-            return false;
-        }
-        if(address.includes('@#$%^&*()_+={}[]|\\;:\'",<>?`~')) {
-            return false;
-        }
-
-        return address.length > 3 ;
+        return address.trim().length >= 3 && !/[~`@#$%^*+=<>?/\\|]/.test(address);
     }
 
     function validatePhone(phone) {
@@ -58,15 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function validateSecurityAnswer(answer) {
-
-        if(answer.trim() === '') {
-            return false;
-        }
-        if(answer.includes('@#$%^&*()_+={}[]|\\;:\'",<>?`~')) {
-            return false;
-        }
-
-        return answer.trim().length > 3;
+        return answer.trim().length > 3 && !/[~`@#$%^*+=<>?/\\|]/.test(answer);
     }
 
     function updateFormValidity() {
