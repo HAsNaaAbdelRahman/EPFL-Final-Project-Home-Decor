@@ -3,6 +3,7 @@ import json
 import os
 
 
+# This file contains the routes for the product management functionality in a Flask application.
 
 def product(app):
     @app.route('/products')

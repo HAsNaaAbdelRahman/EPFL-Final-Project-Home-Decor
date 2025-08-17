@@ -4,6 +4,7 @@ import bcrypt
 from models.user import User
 import uuid
 
+# This file contains the routes for password management functionality in a Flask application.
 def password_op(app):
 
     

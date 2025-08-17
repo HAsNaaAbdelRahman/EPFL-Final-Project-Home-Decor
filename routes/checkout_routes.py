@@ -1,7 +1,7 @@
 from flask import render_template, request, session, jsonify
 from datetime import datetime
 import json
-
+# This file contains the routes for the checkout functionality in a Flask application.
 def checkout(app):
     def generate_order_id():
         return f"ORD-{datetime.now().strftime('%d-%b-%Y %I:%M %p')}"
