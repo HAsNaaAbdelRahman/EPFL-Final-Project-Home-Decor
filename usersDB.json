@@ -1,35 +1,16 @@
 [
     {
-        "name": "Hasnaa AbdelRahman",
+        "address": "Egypt",
+        "cart": {
+            "3": 1
+        },
         "email": "a02040456@gmail.com",
         "id": "bdcc7d66-eed0-4ccb-acaf-bb5471b78181",
+        "name": "Hasnaa AbdelRahman",
+        "orders": [
+           ],
         "password": "$2b$12$LXXqI9S2FkOalQR4UW0jSO9GnOpxWaREKvmveRgdYWytzPqkr1T2.",
-        "address": "Egypt",
         "phone": "01127705139",
-        "security_question": "Black Swan",
-        "cart": {},
-        "orders": []
-    },
-    {
-        "name": "Hasnaa Diab",
-        "email": "dhasnaa70@gmail.com",
-        "id": "ad1b5b2d-53d1-445a-bb29-de040583870c",
-        "password": "$2b$12$4j.a.UN1wyT/D/mShmfUoOyA3hzp4LfPe5zZcljpz5s8KEvNUhdou",
-        "address": "Egypt",
-        "phone": "01127705130",
-        "security_question": "Obsession",
-        "cart": {},
-        "orders": []
-    },
-    {
-        "name": "Aya Ahmed",
-        "email": "aya_ahmend@gmail.com",
-        "id": "a5502b16-10d9-437a-a471-81f0efde60a0",
-        "password": "$2b$12$44OYwDK4fKTVH7sLv252meHxbWy9Ypi8PGUt8eQnEjOdIQUuicYgK",
-        "address": "Cairo, Egypt",
-        "phone": "01145963148",
-        "security_question": "Love Story",
-        "cart": {},
-        "orders": []
+        "security_question": "Black Swan"
     }
 ]
