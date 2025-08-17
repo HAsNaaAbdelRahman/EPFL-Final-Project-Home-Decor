@@ -9,5 +9,7 @@ def home_page(app):
         
         return render_template("home_decor.html")
     
-
+    @app.route('/about')
+    def about():
+        return render_template("about.html")
 
