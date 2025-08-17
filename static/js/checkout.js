@@ -1,155 +1,153 @@
+let subtotal = 0;
+const shippingCost = 20; 
 let total = 0;
+
 const checkoutForm = document.getElementById('checkout-form');
 const placeOrderBtn = document.querySelector('.place-order');
-const requiredInputs = checkoutForm.querySelectorAll('input[required]');
+const requiredInputs = checkoutForm.querySelectorAll('input[required], textarea[required]');
 
 placeOrderBtn.disabled = true;
 placeOrderBtn.style.opacity = '0.5';
 placeOrderBtn.style.cursor = 'not-allowed';
 
 function validateForm() {
-    let isValid = true;
-    let emptyFields = [];
-    
-    requiredInputs.forEach(input => {
-        if (!input.value.trim()) {
-            isValid = false;
-            emptyFields.push(input.getAttribute('placeholder'));
-        }
-    });
-    
-    if (isValid) {
-        placeOrderBtn.disabled = false;
-        placeOrderBtn.style.opacity = '1';
-        placeOrderBtn.style.cursor = 'pointer';
-    } else {
-        placeOrderBtn.disabled = true;
-        placeOrderBtn.style.opacity = '0.5';
-        placeOrderBtn.style.cursor = 'not-allowed';
-    }
+  let isValid = true;
+  let emptyFields = [];
 
-    return { isValid, emptyFields };
+  requiredInputs.forEach(input => {
+    if (!input.value.trim()) {
+      isValid = false;
+      emptyFields.push(input.getAttribute('placeholder'));
+    }
+  });
+
+  if (isValid) {
+    placeOrderBtn.disabled = false;
+    placeOrderBtn.style.opacity = '1';
+    placeOrderBtn.style.cursor = 'pointer';
+  } else {
+    placeOrderBtn.disabled = true;
+    placeOrderBtn.style.opacity = '0.5';
+    placeOrderBtn.style.cursor = 'not-allowed';
+  }
+
+  return { isValid, emptyFields };
 }
 
 requiredInputs.forEach(input => {
-    input.addEventListener('input', validateForm);
-    input.addEventListener('focus', () => {
-        input.style.borderColor = '';
-    });
+  input.addEventListener('input', validateForm);
 });
 
 async function displayCart() {
-    const cartItemsElement = document.getElementById('cart-items');
-    cartItemsElement.innerHTML = '';
-    total = 0;
+  const tbody = document.getElementById('cart-items-table');
+  const emptyDiv = document.getElementById('cart-empty');
+  tbody.innerHTML = '';
+  subtotal = 0;
 
-    try {
-        const response = await fetch('/get_cart_items', {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        });
-        const result = await response.json();
-        const products = result.cart || [];
+  try {
+    const response = await fetch('/get_cart_items');
+    const result = await response.json();
+    const products = result.cart || [];
 
-        products.forEach(product => {
-            const quantity = product.quantity;
-            const itemTotal = product.price * quantity;
-            total += itemTotal;
-
-            const productDiv = document.createElement('div');
-            productDiv.className = 'product-item';
-            productDiv.innerHTML = `
-                <img src="${product.thumbnail}" alt="${product.name}" class="product-image">
-                <div class="product-details">
-                    <div>${product.name}</div>
-                    <div>x ${quantity}</div>
-                </div>
-                <div class="product-price">$${itemTotal.toFixed(2)}</div>
-            `;
-            cartItemsElement.appendChild(productDiv);
-        });
-
-        document.getElementById('subtotal').textContent = `$${total.toFixed(2)}`;
-        document.getElementById('total').textContent = `$${total.toFixed(2)}`;
-    } catch (error) {
-        cartItemsElement.innerHTML = '<div>Error fetching cart items.</div>';
+    if (!products.length) {
+      emptyDiv.style.display = 'block';
+    } else {
+      emptyDiv.style.display = 'none';
     }
+
+    products.forEach(product => {
+      const quantity = Number(product.quantity) || 1;
+      const price = Number(product.price) || 0;
+      const itemTotal = price * quantity;
+      subtotal += itemTotal;
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>
+          <div class="cart-item-info">
+            <img src="${product.thumbnail}" alt="${product.name}">
+            <div>${product.name}</div>
+          </div>
+        </td>
+        <td>x ${quantity}</td>
+        <td>$${price.toFixed(2)}</td>
+        <td>$${itemTotal.toFixed(2)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    total = subtotal + shippingCost;
+
+    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+    document.getElementById('shipping').textContent = `$${shippingCost.toFixed(2)}`;
+    document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+  } catch (error) {
+    tbody.innerHTML = `<tr><td colspan="4">Error fetching cart items.</td></tr>`;
+  }
 }
 
 async function fetchCartFromBackend() {
-    try {
-        const response = await fetch('/get_cart_items', {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        });
-        const result = await response.json();
-        return result.cart || [];
-    } catch (error) {
-        document.getElementById('cart-items').innerHTML = '<div>Error fetching cart items.</div>';
-        return [];
-    }
+  try {
+    const response = await fetch('/get_cart_items');
+    const result = await response.json();
+    return result.cart || [];
+  } catch (error) {
+    return [];
+  }
 }
 
 async function placeOrder() {
-    const validation = validateForm();
-    
-    if (!validation.isValid) {
-        const emptyFieldsList = validation.emptyFields.join(', ');
-        alert(`Please fill in all required fields to continue your order.\n\nMissing information for: ${emptyFieldsList}`);
-        
-        requiredInputs.forEach(input => {
-            if (!input.value.trim()) {
-                input.style.borderColor = 'red';
-                input.addEventListener('input', function removeHighlight() {
-                    if (input.value.trim()) {
-                        input.style.borderColor = '';
-                        input.removeEventListener('input', removeHighlight);
-                    }
-                });
-            }
-        });
-        return;
+  const validation = validateForm();
+
+  if (!validation.isValid) {
+    alert("Please fill all required fields!");
+    return;
+  }
+
+  const formData = new FormData(checkoutForm);
+  const orderData = {
+    customerInfo: Object.fromEntries(formData),
+    cart: await fetchCartFromBackend(),
+    subtotal: subtotal,
+    shipping: shippingCost,
+    total: total
+  };
+
+  try {
+    const response = await fetch('/save_order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(orderData)
+    });
+    const data = await response.json();
+
+    if (data.success) {
+      showSuccessDialog();
+    } else {
+      alert('Error placing order: ' + (data.message || 'Unknown error'));
     }
-
-    const formData = new FormData(checkoutForm);
-    const orderData = {
-        customerInfo: Object.fromEntries(formData),
-        cart: await fetchCartFromBackend(),
-        total: total,
-    };
-
-    try {
-        const response = await fetch('/save_order', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(orderData)
-        });
-        const data = await response.json();
-
-        if (data.success) {
-            showSuccessDialog();
-        } else {
-            alert('Error placing order: ' + data.message);
-        }
-    } catch (error) {
-        alert('Error placing order.');
-        console.error(error);
-    }
+  } catch (error) {
+    alert('Error placing order.');
+  }
 }
 
 function showSuccessDialog() {
-    document.getElementById('overlay').style.display = 'block';
-    document.getElementById('successDialog').style.display = 'block';
+  document.getElementById('overlay').style.display = 'block';
+  document.getElementById('successDialog').style.display = 'block';
 }
 
 function hideSuccessDialog() {
-    document.getElementById('overlay').style.display = 'none';
-    document.getElementById('successDialog').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
+  document.getElementById('successDialog').style.display = 'none';
 }
 
 placeOrderBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    placeOrder();
+  e.preventDefault();
+  placeOrder();
 });
 
 displayCart();
+
+function closePopup() {
+  document.getElementById("successPopup").style.display = "none";
+}

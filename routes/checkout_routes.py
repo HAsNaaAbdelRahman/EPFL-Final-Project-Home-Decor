@@ -4,7 +4,7 @@ import json
 
 def checkout(app):
     def generate_order_id():
-        return f"ORD-{datetime.now().strftime('%Y%m%d%H%M%S')}"
+        return f"ORD-{datetime.now().strftime('%d-%b-%Y %I:%M %p')}"
     @app.route('/checkout', methods=['GET'])
     def checkout_page():
         return render_template('checkout.html')
@@ -16,7 +16,7 @@ def checkout(app):
 
         user_id = session.get('user_id')
         order_data = request.json
-        order_data['order_date'] = datetime.now().isoformat()
+        order_data['order_date'] = datetime.now().strftime('%d-%b-%Y %I:%M %p')
         order_data['order_id'] = generate_order_id()
 
         try:
@@ -57,5 +57,4 @@ def checkout(app):
                 return jsonify({"success": False, "error": "User not found"}), 404
 
         except Exception as e:
-            return jsonify({"success": False, "error": str(e)}), 500
             return jsonify({"success": False, "error": str(e)}), 500
