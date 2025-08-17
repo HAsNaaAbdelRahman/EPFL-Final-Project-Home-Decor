@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from routes.validation import email_validation , validateFullName , validateAddress
 import json
 import bcrypt
 from models.user import User
@@ -35,12 +36,19 @@ def account_routes(app):
             
             if not email or not password:
                 return jsonify({'error': 'Email and password are required'}), 400
+         
+
+            email_valid = email_validation(email)
+            if not email_valid[0]:
+                    return render_template('login.html', error=email_valid[1])
+
+            email = email_valid[1]
+
             
             users = load_users()
             user = next((u for u in users if u['email'] == email), None)
             
             if user and bcrypt.checkpw(password.encode('utf-8'), user['password'].encode('utf-8')):
-                # سيشن يخلص مع قفل البراوزر
                 session.permanent = False  
                 session['user_id'] = user['id']
 
@@ -81,6 +89,36 @@ def account_routes(app):
                 address = request.form.get('address')
                 phone = request.form.get('phone')
                 security_question = request.form.get('security_question')
+
+                
+
+            if not email or not password or not name :
+                return render_template('signup.html', error='Please fill all required fields.')
+            
+            if not validateFullName(name):
+                return render_template('signup.html', error='Full name must be at least 7 characters long and cannot contain special characters.')
+            
+            if not validateAddress(address):
+                return render_template('signup.html', error='Address must be at least 3 characters long and cannot contain special characters.')
+            
+            if not phone or len(phone) < 10:
+                return render_template('signup.html', error='Phone number must be at least 10 digits long.')
+            
+            if not security_question or len(security_question) < 3:
+                return render_template('signup.html', error='Security question must be at least 3 characters long .')
+            
+            if not password or len(password) < 6:
+                return render_template('signup.html', error='Password must be at least 6 characters long.')
+            
+            if not security_question or len(security_question) < 3:
+                return render_template('signup.html', error='Security question must be at least 3 characters long.')
+            
+            
+            email_valid = email_validation(email)
+            if not email_valid[0]:
+                return render_template('signup.html', error=email_valid[1])
+
+            email = email_valid[1]    
             
             users = load_users()
             if any(u['email'] == email for u in users):
@@ -102,7 +140,7 @@ def account_routes(app):
                     'message': 'Registration successful'
                 }), 201
             else:
-                return redirect(url_for('login'))
+                return render_template('login.html')
         
         return render_template('signup.html')
     

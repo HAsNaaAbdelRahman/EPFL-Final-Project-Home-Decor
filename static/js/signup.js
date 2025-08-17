@@ -19,7 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     function validateFullName(name) {
-        return name.trim().length >= 3;
+        if(name.trim() === '') {
+            return false;
+        }
+        if(name.includes('@#$%^&*()_+={}[]|\\;:\'",<>?`~')) {
+            return false;
+        }
+        return name.trim().length >= 7;
     }
 
     function validateEmail(email) {
@@ -28,28 +34,45 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function validatePassword(password) {
+        if(password.trim() === '') {
+            return false;
+        }
         return password.length >= 6;
     }
 
     function validateAddress(address) {
-        return address.trim().length > 0;
+        if(address.trim() === '') {
+            return false;
+        }
+        if(address.includes('@#$%^&*()_+={}[]|\\;:\'",<>?`~')) {
+            return false;
+        }
+
+        return address.length > 3 ;
     }
 
     function validatePhone(phone) {
-        const re = /^[0-9]{10,15}$/;
+        const re = /^[0-9]{11}$/;
         return re.test(phone);
     }
 
     function validateSecurityAnswer(answer) {
-        return answer.trim().length > 0;
+
+        if(answer.trim() === '') {
+            return false;
+        }
+        if(answer.includes('@#$%^&*()_+={}[]|\\;:\'",<>?`~')) {
+            return false;
+        }
+
+        return answer.trim().length > 3;
     }
 
     function updateFormValidity() {
         let isValid = true;
         
-        // Validate each field
         if (!validateFullName(inputs.fullname.value)) {
-            errorElements.fullname.textContent = 'Full name must be at least 3 characters';
+            errorElements.fullname.textContent = 'Full name must be at least 7 characters long and cannot contain special characters.';
             errorElements.fullname.style.display = 'block';
             isValid = false;
         }
@@ -67,19 +90,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (!validateAddress(inputs.address.value)) {
-            errorElements.address.textContent = 'Please enter your address';
+            errorElements.address.textContent = 'Please enter your address must be at least characters and avoid special characters and any spaces.';
             errorElements.address.style.display = 'block';
             isValid = false;
         }
 
         if (!validatePhone(inputs.phone.value)) {
-            errorElements.phone.textContent = 'Please enter a valid phone number (10-15 digits)';
+            errorElements.phone.textContent = 'Please enter a valid phone number (13 digits)';
             errorElements.phone.style.display = 'block';
             isValid = false;
         }
 
         if (!validateSecurityAnswer(inputs.security_question.value)) {
-            errorElements.security_question.textContent = 'Please answer the security question';
+            errorElements.security_question.textContent = 'Please answer the security question (3 characters minimum) and avoid special characters.';
             errorElements.security_question.style.display = 'block';
             isValid = false;
         }
@@ -122,17 +145,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     errorElements.email.textContent = data.error;
                     errorElements.email.style.display = 'block';
                     inputs.email.classList.add('error');
+                }else {
+                errorElements.email.textContent = data.error || 'Registration failed';
+                errorElements.email.style.display = 'block';
                 }
-                throw new Error(data.error || 'Registration failed');
+                return;
             }
 
             if (data.id) {
-                localStorage.setItem('user', JSON.stringify(data));
-                window.location.href = '/';
+                window.location.href = '/login';
             }
         } catch (error) {
-            console.error('Signup Error:', error);
-            alert(error.message || 'An error occurred during registration');
+                errorElements.email.textContent = 'Something went wrong, please try again later';
+                errorElements.email.style.display = 'block';
         }
     });
 });

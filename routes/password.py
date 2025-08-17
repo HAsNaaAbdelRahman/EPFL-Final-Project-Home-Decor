@@ -47,6 +47,11 @@ def password_op(app):
             
             if new_password != confirm_password:
                 return render_template('reset_password.html', error="Passwords do not match")
+            if len(new_password) < 6:
+                return render_template('reset_password.html', error="Password must be at least 6 characters long")
+            if not new_password.strip():
+                return render_template('reset_password.html', error="Password cannot be empty")
+            
             
             users = load_users()
             for user in users:
