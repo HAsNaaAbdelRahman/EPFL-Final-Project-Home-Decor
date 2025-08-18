@@ -80,9 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const result = await response.json();
                     if (result.success) {
             alert(result.message || `Added ${quantity} to cart!`);
-                        updateCartCount(result.cart_count);
                    } else {
-                        showNotification(result.error || 'Failed to add product to cart.', 'error');
+                       showNotification(result.error || 'Failed to add product to cart.', 'error');
                     }
                 } catch (error) {
                     showNotification('Failed to add product to cart.', 'error');
