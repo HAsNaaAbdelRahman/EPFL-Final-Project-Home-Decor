@@ -1,24 +1,75 @@
 [
     {
-        "name": "Hasnaa AbdelRahman",
+        "address": "Egypt",
+        "cart": {
+            "3": 1
+        },
         "email": "a02040456@gmail.com",
         "id": "bdcc7d66-eed0-4ccb-acaf-bb5471b78181",
+        "name": "Hasnaa AbdelRahman",
+        "orders": [],
         "password": "$2b$12$LXXqI9S2FkOalQR4UW0jSO9GnOpxWaREKvmveRgdYWytzPqkr1T2.",
-        "address": "Egypt",
         "phone": "01127705139",
-        "security_question": "Black Swan",
-        "cart": {},
-        "orders": []
+        "security_question": "Black Swan"
     },
     {
-        "name": "Hasnaa Diab",
-        "email": "dhasnaa70@gmail.com",
-        "id": "ad1b5b2d-53d1-445a-bb29-de040583870c",
-        "password": "$2b$12$4j.a.UN1wyT/D/mShmfUoOyA3hzp4LfPe5zZcljpz5s8KEvNUhdou",
-        "address": "Egypt",
-        "phone": "01127705130",
-        "security_question": "Obsession",
+        "address": "Cairo, Egypt",
         "cart": {},
-        "orders": []
+        "email": "dhasnaa70@gmail.com",
+        "id": "bdc14806-f0f9-47af-94b2-f2f9ea036c43",
+        "name": "Hasnaa Diab",
+        "orders": [],
+        "password": "$2b$12$Wg8YPUj5Lo5fJywElebgz.7ANdjVvbJJYK4fyY1h2Or2HrPwb.8i.",
+        "phone": "01196387416",
+        "security_question": "Love Story"
+    },
+    {
+        "address": "Cairo, Egypt",
+        "cart": {},
+        "email": "ahmed.m70@gmail.com",
+        "id": "1021863a-1558-4542-80b3-31265528a267",
+        "name": "Ahmed Mohammed",
+        "orders": [
+            
+            {
+                "customerInfo": {
+                    "fullName": "Ahmed Mohamed",
+                    "email": "ahmed.m70@gmail.com",
+                    "phone": "0100311682",
+                    "address": "Egypt"
+                },
+                "cart": [
+                    {
+                        "id": "4",
+                        "name": "Miniature Wooden Vases",
+                        "price": 500,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
+                    },
+                    {
+                        "id": "5",
+                        "name": "Handcraft Wooden Vase",
+                        "price": 350,
+                        "quantity": 1,
+                        "thumbnail": "https://i.etsystatic.com/27150887/r/il/cbb5b3/3070159340/il_794xN.3070159340_67rt.jpg"
+                    },
+                    {
+                        "id": "3",
+                        "name": "Melanie Wooden Vase",
+                        "price": 460,
+                        "quantity": 1,
+                        "thumbnail": "https://assets.weimgs.com/weimgs/rk/images/wcm/products/202322/0097/melanie-abrantes-hardwood-vase-tall-m.jpg"
+                    }
+                ],
+                "subtotal": 1310,
+                "shipping": 20,
+                "total": 1330,
+                "order_date": "18-Aug-2025 05:30 AM",
+                "order_id": "ORD-0fe1ee21"
+            }
+        ],
+        "password": "$2b$12$nfk9OL5QRhG3Tc/Kkg0t.ub5A260C4gO2jxXMKtkNWSKreLIKrUYC",
+        "phone": "01028946323",
+        "security_question": "Dragons"
     }
 ]

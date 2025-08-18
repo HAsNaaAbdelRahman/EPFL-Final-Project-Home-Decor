@@ -4,7 +4,9 @@
         "id":1,
         "name":"Asili Wooden Vase",
         "type":"Vases",
-        "price": "$405.00"
+        "price": "$405.00",
+        "image":"https://www.magalis-egypt.com/cdn/shop/files/asili_1500x.webp?v=1693390735"
+
 
     },
 
@@ -13,7 +15,9 @@
         "id":3,
         "name":"Melanie Wooden Vase",
         "type":"Vases",
-        "price": "$460.00"
+        "price": "$460.00",
+        "image":"https://assets.weimgs.com/weimgs/rk/images/wcm/products/202322/0097/melanie-abrantes-hardwood-vase-tall-m.jpg"
+
 
     },
     
@@ -23,7 +27,8 @@
         "id":4,
         "name":"Miniature Wooden Vases",
         "type":"Vases",
-        "price": "$500.00"
+        "price": "$500.00",
+        "image":"https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
 
     },
     
@@ -32,7 +37,8 @@
         "id":5,
         "name":"Handcraft Wooden Vase",
         "type":"Vases",
-        "price": "$350.00"
+        "price": "$350.00",
+        "image":"https://i.etsystatic.com/27150887/r/il/cbb5b3/3070159340/il_794xN.3070159340_67rt.jpg"
 
     },
     
@@ -41,7 +47,8 @@
         "id":6,
         "name":"Paulownia Wood Vase",
         "type":"Vases",
-        "price": "$150.00"
+        "price": "$150.00",
+        "image":"https://cdn.shopify.com/s/files/1/0207/8508/products/001_PRD_2017.04.19-1.jpg"
 
     },
     
@@ -50,7 +57,8 @@
         "id":7,
         "name":"Abstract Fusion",
         "type":"Wall Art",
-        "price": "$250.00"
+        "price": "$250.00",
+        "image":"https://www.magalis-egypt.com/cdn/shop/files/AbstractFusion_SetOf3_1_1080x.webp?v=1693161583"
 
     }
     ,
@@ -60,7 +68,8 @@
         "id":8,
         "name":"Nostalgic Artistry",
         "type":"Wall Art",
-        "price": "$300.00"
+        "price": "$300.00",
+        "image":"https://i.etsystatic.com/42479776/r/il/550447/4884965773/il_fullxfull.4884965773_mmb0.jpg"
 
     }
     ,
@@ -70,7 +79,8 @@
         "id":9,
         "name":"Golden Menents",
         "type":"Wall Art",
-        "price": "$100.00"
+        "price": "$100.00",
+        "image":"https://i.etsystatic.com/14624241/r/il/1caea2/5161772027/il_1080xN.5161772027_5rhm.jpg"
 
     }
     ,
@@ -80,7 +90,8 @@
         "id":10,
         "name":"Large Boho Wall Art",
         "type":"Wall Art",
-        "price": "$500.00"
+        "price": "$500.00",
+        "image":"https://m.media-amazon.com/images/I/81kJLTV1d9L.jpg"
 
     }
 
@@ -91,7 +102,8 @@
         "id":11,
         "name":"Art Bauhuas",
         "type":"Wall Art",
-        "price": "$600.00"
+        "price": "$600.00",
+        "image":"https://warididesigns.co.za/wp-content/uploads/2023/08/image01-1010x943.jpg"
 
     }
 
@@ -102,7 +114,8 @@
         "id":12,
         "name":"Mid Century Modern",
         "type":"Wall Art",
-        "price": "$450.00"
+        "price": "$450.00",
+        "image":"https://i.etsystatic.com/13304056/r/il/d4205a/3358293774/il_794xN.3358293774_b647.jpg"
 
     }
 
@@ -113,7 +126,8 @@
         "id":13,
         "name":"Wedding Candles",
         "type":"Candles",
-        "price": "$200.00"
+        "price": "$200.00",
+        "image":"https://pink-book.co.za/wp-content/uploads/2022/10/wedding-decor-2023-2.png"
 
     }
 
@@ -124,7 +138,8 @@
         "id":14,
         "name":"Ribbed Pillar Candles",
         "type":"Candles",
-        "price": "$150.00"
+        "price": "$150.00",
+        "image":"https://i.etsystatic.com/25858468/r/il/6f0286/5809696855/il_1080xN.5809696855_nms5.jpg"
 
     }
 
@@ -135,7 +150,8 @@
         "id":15,
         "name":"Modern Wedding Candles",
         "type":"Candles",
-        "price": "$150.00"
+        "price": "$150.00",
+        "image":"https://i.pinimg.com/originals/a2/6a/cc/a26acc6b6b167f97afbc2a5787a77842.jpg"
 
     }
 
@@ -146,7 +162,8 @@
         "id":16,
         "name":"Classic Candles",
         "type":"Candles",
-        "price": "$80.00"
+        "price": "$80.00",
+        "image":"https://i.pinimg.com/originals/6b/67/a6/6b67a6f7dc80150bdb26a33bfca59b58.jpg"
 
     }
 
@@ -157,7 +174,8 @@
         "id":17,
         "name":"Dark Classic Candles",
         "type":"Candles",
-        "price": "$60.00"
+        "price": "$60.00",
+        "image":"https://i.pinimg.com/474x/10/dc/74/10dc74f333a5687d03a043e8fb446562--home-decor-ideas-rooms-home-decor.jpg"
 
     }
 
@@ -168,7 +186,8 @@
         "id":18,
         "name":"White Classic Candles",
         "type":"Candles",
-        "price": "$100.00"
+        "price": "$100.00",
+        "image":"https://i.pinimg.com/originals/e4/ea/5b/e4ea5b971da9da85aeb85782b38c99fb.jpg"
 
     }
 
@@ -179,7 +198,8 @@
         "id":19,
         "name":"Gold Light Orb",
         "type":"Lighting",
-        "price": "$100.00"
+        "price": "$100.00",
+        "image":"https://media.s-bol.com/BOnpBEql91Xk/lxlzNrg/550x550.jpg"
 
     }
 
@@ -190,7 +210,9 @@
         "id":20,
         "name":"Dark Light Orb",
         "type":"Lighting",
-        "price": "$150.00"
+        "price": "$150.00",
+        "image":"https://item-shopping.c.yimg.jp/i/n/elements_66902_16"
+
 
     }
      ,
@@ -200,7 +222,8 @@
         "id":21,
         "name":"Modern Dark Light Orb",
         "type":"Lighting",
-        "price": "$150.00"
+        "price": "$150.00",
+        "image":"https://www.ikea.com/ca/en/images/products/grindfallet-pendant-lamp-black__1057648_ph179181_s5.jpg?f=xs"
 
     }
 ]

@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function(e) {
+    e.preventDefault();
     const loginForm = document.getElementById('loginForm');
     const errorMessage = document.getElementById('errorMessage');
     const loginButton = loginForm.querySelector('input[type="submit"]');
@@ -16,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!email || !password) {
             showError('Please fill in all fields');
+            resetLoginButton();
+            return;
+        }
+
+           if (!validateEmail(email)) {
+            showError('Please enter a valid email address');
             resetLoginButton();
             return;
         }
@@ -46,13 +53,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (data.success) {
                 localStorage.setItem('user', JSON.stringify(data.user));
-                
+
                 setTimeout(() => {
                     window.location.href = '/';
                 }, 1000);
+            }else {
+                showError('Invalid email or password');
+                resetLoginButton();
+
             }
             
         } catch (error) {
+            showError(error.message || 'Something went wrong');
+
             resetLoginButton();
         }
     }
@@ -84,6 +97,13 @@ document.addEventListener('DOMContentLoaded', function() {
         errorMessage.className = 'error-message success';
         errorMessage.style.display = 'block';
     }
-
+    function validateEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
     loginForm.addEventListener('submit', handleLogin);
+});
+
+window.addEventListener('load', () => {
+    localStorage.removeItem('user');
 });

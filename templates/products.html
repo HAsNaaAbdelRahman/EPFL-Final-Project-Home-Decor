@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/logo-2.png" />
+    <title>Our Products</title>
+    <link rel="stylesheet" href="../static/css/home.css">
+
+    <link rel="stylesheet" href="../static/css/products.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+       <nav>
+        <div class="nav_header">
+            <div class="nav_logo">
+                <a href='/' class="logo">Home Decor</a>
+
+                <div class="nav_menu_btn" id="menu_btn">
+                <i class="ri-menu-line"></i>
+                </div>
+            </div>
+            <ul class="nav__links" id="nav-links">
+                <li><a href='/'>Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+  
+     <div class="nav__icons">
+            <span class="user-dropdown">
+                <a href="/profile" class="user-icon">
+                    <i class="ri-user-line"></i>
+                </a>
+       
+            </span>
+            <span><a href="/cart"><i class="ri-shopping-cart-2-line"></i></a></span>
+     
+        </div>
+
+        
+    </nav>
+
+    <section class="section___container product___container" id="products">
+        <h2 class="section___header">Our Products</h2>
+        
+        <div class="filter">
+            <button class="filter__btn active" data-type="all">All</button>
+            <button class="filter__btn" data-type="vases">Vases</button>
+            <button class="filter__btn" data-type="wall art">Wall Art</button>
+            <button class="filter__btn" data-type="candles">Candles</button>
+            <button class="filter__btn" data-type="lighting">Lighting</button>
+        </div>
+        
+        <div class="product___grid">
+        </div>
+    </section>
+    <script src="../static/js/home.js"></script>
+
+    <script src="../static/js/navbar.js"></script>
+    <script src="../static/js/products.js"></script>
+
+  
+</body>
+</html>

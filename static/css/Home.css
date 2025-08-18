@@ -87,30 +87,35 @@ nav {
     width: 100%;
     max-width: var(--max-width);
     margin-inline: auto;
-    z-index: 9;
+    z-index: 999;
+    padding: 0;
+    top:0;
+    left: 0;
+    right: 0;
 }
 
 .nav_header {
     padding: 1rem;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     background-color: var(--primary-color);
+    max-width: var(--max-width);
 }
 
 .nav_logo .logo {
     color: var(--white);
 }
-.nav__icons {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
+
 
 .user-dropdown {
     position: relative;
 }
+
+header.section__container {
+    margin-top: 60px; 
+}
+
 
 .user-dropdown .dropdown-menu {
     display: none;
@@ -157,8 +162,9 @@ nav {
 }
 
 .nav__links {
+    
     position: absolute;
-    top: 65px;
+    top: 60px;
     left: 0;
     width: 100%;
     padding: 2rem;
@@ -169,7 +175,7 @@ nav {
     gap: 2rem;
     background-color: var(--primary-color);
     transition: .5s;
-    z-index: -1;
+    z-index: 998;
     transform: translateY(-100%);
 }
 
@@ -181,10 +187,6 @@ nav {
     font-weight: 500;
     color: var(--white);
     
-}
-
-.nav__search {
-    display: none;
 }
 
 
@@ -248,6 +250,19 @@ nav {
 
 
 }
+.about__image {
+    position: relative;
+    margin-left: auto; 
+    margin-right: 20px; 
+    max-width: 90%; 
+    overflow: hidden;
+    transform: translateX(60px);
+    margin-left: auto;
+    transition: transform 0.3s ease;
+
+
+}
+
 .about__header {
     display: flex;
     flex-direction: column;
@@ -332,9 +347,7 @@ nav {
     gap: 2rem;
 }
 
-.about__image {
-    overflow: hidden;
-}
+
 .about__card h3 {
     margin-bottom: .5rem;
     font-size: 2.5rem;
@@ -442,6 +455,21 @@ nav {
 
 
 }
+
+@media (max-width: 900px) {
+    .about__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    .about__main-image {
+        margin-top: 1rem;
+        max-width: 100%;
+    }
+    .about__container {
+        padding: 1.5rem 0.5rem;
+    }
+}
 @media (width > 540px) {
     .deals__container {
         grid-template-columns: repeat(2 , 1fr);
@@ -517,6 +545,10 @@ nav {
         background-color: transparent;
         transform: none;
     }
+        header.section__container {
+        margin-top: 0;
+    }
+
     .nav__links a {
         color: var(--text-dark);
     }
@@ -560,6 +592,32 @@ nav {
 
 .more__btn {
     margin-left: 40% ;
+}
+
+@media (width <= 768px) {
+    .nav__links {
+        position: fixed; 
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        display: none; 
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+        background-color: var(--primary-color);
+        z-index: 998;
+        transform: none; 
+    }
+
+    .nav__links.open {
+        display: flex; 
+    }
+
+    .nav_header {
+        height: 60px; 
+    }
 }
 }
 

@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Decor</title>
+    <title>Home | Home Decor</title>
     <link rel="shortcut icon" type="image/x-icon" href="../static/images/logo-2.png" />
     <link rel="stylesheet" href="../static/css/home.css">
+
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-
     
 </head>
 <body>
@@ -22,27 +21,34 @@
                 <i class="ri-menu-line"></i>
                 </div>
             </div>
+           
             <ul class="nav__links" id="nav-links">
                 <li><a href='/'>Home</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="/products">Products</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-  
+     
      <div class="nav__icons">
             <span class="user-dropdown">
                 <a href="#" class="user-icon">
                     <i class="ri-user-line"></i>
                 </a>
+                {% if current_user %}
                 <ul class="dropdown-menu">
                     <li><a href="/profile">Profile</a></li>
+                    <li><a class="logout-button" href="/logout">Logout</a></li>
+                </ul>
+                {% else %}
+
+                    <ul class="dropdown-menu">
                     <li><a href="/login">Login</a></li>
                     <li><a href="/signup">Sign Up</a></li>
-                    <li><a href="/logout">Logout</a></li>
                 </ul>
+                {% endif %}
+
             </span>
-            <span><a href="#"><i class="ri-shopping-cart-2-line"></i></a></span>
-            <span><a href="#"><i class="ri-heart-line"></i></a></span>
+            <span><a href="/cart"><i class="ri-shopping-cart-2-line"></i></a></span>
         </div>
 
         
@@ -59,7 +65,7 @@
                   
                 </p>   
                 <br>
-                 <div><button class="shop__btn">Shop Now</button></div>
+                 <div><button href="/products" class="shop__btn">Shop Now</button></div>
              
             </div>
 
@@ -99,7 +105,7 @@
                  we simplify decorating and help turn your house into a place you’re proud to call home.
                 </p>
             </div>
-            <button class="about__btn">Learn More</button>
+            <button href="/about" class="about__btn learn__more-btn" >More About Us</button>
         </div>
         <div class="about__content">
             <div class="about__image">
@@ -130,58 +136,52 @@
             </div>
         </div>
     </section>
+   
     <section class="section__container product__container" id="products">
         <h2 class="section__header"> Featured Products </h2>
         <div class="product__grid">
             <div class="product__card">
-               <h4>Asili Wooden Vase</h4>
-               <p>$405.00</p> 
+            
                <img src="https://www.magalis-egypt.com/cdn/shop/files/asili_1500x.webp?v=1693390735" alt="">
             
         </div>
         
             <div class="product__card">
-               <h4>Melanie Wooden Vase</h4>
-               <p>$460.00</p> 
+           
                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202322/0097/melanie-abrantes-hardwood-vase-tall-m.jpg" alt="">
             
         </div>
         
             <div class="product__card">
-               <h4>Bohemian Wooden Vase</h4>
-               <p>$350.00</p> 
+            
                <img src="https://i.etsystatic.com/38031639/r/il/e51655/5043992111/il_1080xN.5043992111_kthk.jpg" alt="">
             </div>
         
              
             <div class="product__card">
-               <h4>Miniature Wooden Vases</h4>
-               <p>$500.00</p> 
+              
                <img src="https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg" alt="">
             </div>
         
              
             <div class="product__card">
-               <h4>Handcraft Wooden Vase</h4>
-               <p>$350.00</p> 
+       
                <img src="https://i.etsystatic.com/27150887/r/il/cbb5b3/3070159340/il_794xN.3070159340_67rt.jpg" alt="">
             </div>
             
         
        
             <div class="product__card">
-               <h4>Paulownia Wood Vase</h4>
-               <p>$150.00</p> 
+             
                <img src="https://cdn.shopify.com/s/files/1/0207/8508/products/001_PRD_2017.04.19-1.jpg" alt="">
             </div>
-             <br><span><button class="more__btn">More</button></span>
     </section>
 
 <footer class="footer" id="contact">
 <div class="section__container footer__container">
     <div class="footer__col">
     <div class="footer__logo">
-        <a href="#" class="logo">Home Decor</a>
+        <a href="/" class="logo">Home Decor</a>
     </div>
     <p> <i>  your home decor with the perfect touch. </i></p>
  
@@ -224,6 +224,7 @@
 <script src="../static/js/home.js"></script>
 <script src="../static/js/logout.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
+
 
 </body>
 </html>

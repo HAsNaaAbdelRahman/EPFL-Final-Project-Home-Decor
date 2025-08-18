@@ -16,7 +16,8 @@ class User:
 
     def hash_password(self):
         hashed = bcrypt.hashpw(self.password.encode('utf-8'), bcrypt.gensalt())
-        return hashed.decode('utf-8')
+        self.password = hashed.decode('utf-8') 
+        return self.password
 
     def format_data(self, hashed_password):
         users_list = []
