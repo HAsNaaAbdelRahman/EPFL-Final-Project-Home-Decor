@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
         } catch (error) {
-            console.error('Failed to update cart count:', error);
         }
     }
 

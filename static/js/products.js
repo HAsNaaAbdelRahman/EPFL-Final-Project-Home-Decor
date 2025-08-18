@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         showNotification(result.error || 'Failed to add product to cart.', 'error');
                     }
                 } catch (error) {
-                    console.error('Error:', error);
                     showNotification('Failed to add product to cart.', 'error');
                 }
             });
@@ -99,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(data.error || 'Failed to load products');
             }
         } catch (error) {
-            console.error('Error:', error);
             productGrid.innerHTML = `
                 <div class="error-message">
                     <p>Error loading products. Please try again later.</p>
