@@ -1,8 +1,8 @@
 from flask import Flask , redirect , render_template
-from routes.home import home_page
+from routes.home_routes import home_page
 from routes.account_routes import account_routes
-from routes.password import password_op
-from routes.products import product
+from routes.password_routes import password_op
+from routes.products_routes import product
 from routes.cart_routes import cart
 from routes.checkout_routes import checkout
 

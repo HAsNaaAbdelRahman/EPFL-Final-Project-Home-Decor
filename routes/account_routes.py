@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
-from routes.validation import email_validation , validateFullName , validateAddress
+from routes.validation_routes import email_validation , validateFullName , validateAddress
 import json
 import bcrypt
 from models.user import User
@@ -158,6 +158,5 @@ def account_routes(app):
 
     @app.route('/logout')
     def logout():
-        session.pop('user_id', None)    
         session.clear() 
         return redirect(url_for('login'))
