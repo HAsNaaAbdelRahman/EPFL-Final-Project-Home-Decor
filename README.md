@@ -94,7 +94,7 @@ templates/: Contains HTML templates for the front end.
 static/: Contains CSS and JavaScript files for styling and front-end functionality.
 
 
-
+```bash
 my_flask_app/
 ├── route_app.py              # Main Flask application file
 ├── models/
@@ -102,7 +102,7 @@ my_flask_app/
 ├── routes/                   # Contains route handlers
 │   ├── account_routes.py     # Authentication-related routes
 │   ├── cart_routes.py        # Cart management routes
-│   ├── checkout_routes.py    # Checkout & wishlist management routes
+│   ├── checkout_routes.py    # Checkout management routes
 │   ├── home_routes.py        # Home page & general routes
 │   ├── password_routes.py    # Password reset & update routes
 │   ├── products_routes.py    # Product-related routes
@@ -115,6 +115,4 @@ my_flask_app/
 │   ├── js/                   # Frontend JavaScript logic
 │   └── images/               # Images used in the project
 ├── usersDB.json              # Stores user data
-
-
-
+```
