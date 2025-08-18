@@ -1,0 +1,4 @@
+Flask
+bcrypt
+email-validator
+jinja2
