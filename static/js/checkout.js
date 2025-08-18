@@ -123,6 +123,19 @@ async function placeOrder() {
 
     if (data.success) {
       showSuccessDialog();
+      // clear form after successful order
+      checkoutForm.reset();
+
+      placeOrderBtn.disabled = true;
+      placeOrderBtn.style.opacity = '0.5';
+      placeOrderBtn.style.cursor = 'not-allowed';
+
+      document.getElementById('cart-items-table').innerHTML = '';
+      document.getElementById('subtotal').textContent = '$0.00';
+      document.getElementById('shipping').textContent = '$20.00';
+      document.getElementById('total').textContent = '$0.00';
+
+      document.getElementById('cart-empty').style.display = 'block';
     } else {
       alert('Error placing order: ' + (data.message || 'Unknown error'));
     }
@@ -147,6 +160,7 @@ placeOrderBtn.addEventListener('click', function (e) {
 });
 
 displayCart();
+
 
 function closePopup() {
   document.getElementById("successPopup").style.display = "none";
