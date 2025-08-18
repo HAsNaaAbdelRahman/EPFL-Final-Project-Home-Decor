@@ -96,24 +96,25 @@ static/: Contains CSS and JavaScript files for styling and front-end functionali
 
 
 my_flask_app/
-├── route_app.py # Main Flask application file
+├── route_app.py              # Main Flask application file
 ├── models/
-│ ├── user.py # User model handling authentication & data storage
-├── routes/ # Contains route handlers
-│ ├── account_routes.py # Authentication-related routes
-│ ├── cart_routes.py # Cart management routes
-│ ├── checkout_routes.py # Checkout management routes
-│ ├── home_routes.py # Home page & general routes
-│ ├── password_routes.py # Password reset & update routes
-│ ├── products_routes.py # Product-related routes
-│ ├── validation_routes.py # Input validation routes
-├── DB/ # Folder for storing JSON data
-│ ├── products.json # Stores product data
-├── templates/ # HTML templates for the frontend
-├── static/ # Contains CSS, JS, and images
-│ ├── css/ # Main stylesheet
-│ ├── js/ # Frontend JavaScript logic
-│ └── images/ # Images used in the project
-├── usersDB.json # Stores user data
+│   ├── user.py               # User model handling authentication & data storage
+├── routes/                   # Contains route handlers
+│   ├── account_routes.py     # Authentication-related routes
+│   ├── cart_routes.py        # Cart management routes
+│   ├── checkout_routes.py    # Checkout & wishlist management routes
+│   ├── home_routes.py        # Home page & general routes
+│   ├── password_routes.py    # Password reset & update routes
+│   ├── products_routes.py    # Product-related routes
+│   ├── validation_routes.py  # Input validation routes
+├── DB/                       # Folder for storing JSON data
+│   ├── products.json         # Stores product data
+├── templates/                # HTML templates for the frontend
+├── static/                   # Contains CSS, JS, and images
+│   ├── css/                  # Main stylesheet
+│   ├── js/                   # Frontend JavaScript logic
+│   └── images/               # Images used in the project
+├── usersDB.json              # Stores user data
+
 
 
