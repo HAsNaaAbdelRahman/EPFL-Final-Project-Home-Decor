@@ -1,10 +1,12 @@
 from flask import render_template, request, session, jsonify
 from datetime import datetime
 import json
+import uuid
 # This file contains the routes for the checkout functionality in a Flask application.
 def checkout(app):
     def generate_order_id():
-        return f"ORD-{datetime.now().strftime('%d-%b-%Y %I:%M %p')}"
+        unique_part = str(uuid.uuid4())[:8]  
+        return f"ORD-{unique_part}"
     @app.route('/checkout', methods=['GET'])
     def checkout_page():
         return render_template('checkout.html')
