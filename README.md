@@ -86,17 +86,12 @@ python route_app.py
 
 
 ## Project Structure
-# route_app.py: The main Flask application file.
-
-# models/user.py: init class for user
-
-# usersDB.json: JSON file used for storing user data.
-
-# ProductDB.json: JSON file used for storing product data.
-
-# templates/: Contains HTML templates for the front end.
-
-# static/: Contains CSS and JavaScript files for styling and front-end functionality.
+- route_app.py: The main Flask application file.
+- models/user.py: init class for user
+- usersDB.json: JSON file used for storing user data.
+- ProductDB.json: JSON file used for storing product data.
+- templates/: Contains HTML templates for the front end.
+- static/: Contains CSS and JavaScript files for styling and front-end functionality.
 
 
 ```bash
