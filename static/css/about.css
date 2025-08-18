@@ -198,33 +198,7 @@
     .nav__links a:hover {
         color: var(--primary-color);
     }
-    .nav__search {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 1rem;
-    }
-    .nav__search input {
-        padding-block:5px ;
-        outline: none;
-        border: none;
-        width: 0;
-        font-size: 1rem;
-        color: var(--text-dark);
-        border-bottom: 1px solid var(--text-light);
-        transition: 0.3s;
-    }
-    .nav__search.open input {
-        width: 100%;
-        max-width: 15rem;
-    }
-    .nav__search span {
-        font-size: 1.5rem;
-        font-weight:500;
-        color: var(--text-dark);
-        cursor: pointer;
-    }
+
     .footer__container {
         grid-template-columns: repeat(4,1fr);
     }
