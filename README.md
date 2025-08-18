@@ -79,7 +79,7 @@ pip install Flask bcrypt
 ```
 # Run the Flask application:
 ```bash
-python route_app.py
+flask --app route_app.py run
 ```
 
 4. Open your web browser and navigate to http://127.0.0.1:5000/ to access the application.
@@ -95,7 +95,7 @@ python route_app.py
 
 
 ```bash
-my_flask_app/
+EPFL-Final-Project-Home-Decor/
 ├── route_app.py              # Main Flask application file
 ├── models/
 │   ├── user.py               # User model handling authentication & data storage
