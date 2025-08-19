@@ -70,7 +70,25 @@ pip install flask bcrypt email-validator
 ## How to Run the Project
 
 1. Clone the repository from GitHub.
-2. Install the required dependencies using pip:
+ ```bash
+git clone https://github.com/YourUsername/EPFL-Final-Project-Home-Decor.git
+cd EPFL-Final-Project-Home-Decor
+```
+### 2. Create & Activate a Virtual Environment (Recommended)
+
+It is highly recommended to use a **virtual environment** to keep the dependencies isolated from your global Python installation.
+
+- **On Windows**:
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+- **On Mac/Linux**:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+3. Install the required dependencies using pip:
 ```bash
 pip install Flask 
 ```
