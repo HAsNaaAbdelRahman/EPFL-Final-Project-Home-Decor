@@ -1,9 +1,7 @@
 [
     {
         "address": "Egypt",
-        "cart": {
-            "4": 10
-        },
+        "cart": {},
         "email": "a02040456@gmail.com",
         "id": "bdcc7d66-eed0-4ccb-acaf-bb5471b78181",
         "name": "Hasnaa AbdelRahman",
@@ -579,9 +577,31 @@
                 "shipping": 20,
                 "subtotal": 500,
                 "total": 520
+            },
+            {
+                "customerInfo": {
+                    "fullName": "sara ahmed",
+                    "email": "sara.ahmed@gmail.com",
+                    "phone": "01527705139",
+                    "address": "Cairo, Egypt"
+                },
+                "cart": [
+                    {
+                        "id": "16",
+                        "name": "Classic Candles",
+                        "price": 80,
+                        "quantity": 9,
+                        "thumbnail": "https://i.pinimg.com/1200x/d2/40/e3/d240e303b1c018485bc2645131be230d.jpg"
+                    }
+                ],
+                "subtotal": 720,
+                "shipping": 20,
+                "total": 740,
+                "order_date": "19-Aug-2025 03:16 PM",
+                "order_id": "ORD-3451aa05"
             }
         ],
-        "password": "$2b$12$E4cT1G.swDBhC.ziY7DTqO0X3nq/867tYmBb.DcNyILdGDsG7Fp0.",
+        "password": "$2b$12$0qZs.RhdI32.7DMIJKsIs.24w1Dio25aaeWsoNnom.FKoc//MwnjW",
         "phone": "01527705139",
         "security_question": "KARMA"
     }
