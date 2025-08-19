@@ -44,6 +44,12 @@ function validateInput(input) {
     } else if (/[~`@#$%^*+=<>?/\\|.-]/.test(value)) {
       errorSpan.textContent = "Name cannot contain special characters";
       return false;
+    }else if (/[0-9]/.test(value)) {
+      errorSpan.textContent = "Name cannot contain digits";
+      return false;
+    }else if (value.split('').length < 0) {
+      errorSpan.textContent = "Name cannot be empty";
+      return false;
     }
   }
 
