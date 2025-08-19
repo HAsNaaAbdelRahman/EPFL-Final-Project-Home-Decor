@@ -6,37 +6,93 @@ const checkoutForm = document.getElementById('checkout-form');
 const placeOrderBtn = document.querySelector('.place-order');
 const requiredInputs = checkoutForm.querySelectorAll('input[required], textarea[required]');
 
-placeOrderBtn.disabled = true;
-placeOrderBtn.style.opacity = '0.5';
-placeOrderBtn.style.cursor = 'not-allowed';
+// === Validation Function ===
+function validateInput(input) {
+  const value = input.value.trim();
+  const errorSpan = input.nextElementSibling;
+  errorSpan.textContent = "";
+
+  // Check empty
+  if (!value) {
+    errorSpan.textContent = "This field is required";
+    return false;
+  }
+
+  // Email validation
+  if (input.type === "email") {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      errorSpan.textContent = "Invalid email format";
+      return false;
+    }
+  }
+
+  // Phone validation (11 digits)
+  if (input.id === "phone") {
+    const phoneRegex = /^[0-9]{11}$/; 
+    if (!phoneRegex.test(value)) {
+      errorSpan.textContent = "Invalid phone number (format: 11 digits)";
+      return false;
+    }
+  }
+
+  // Full name validation
+  if (input.id === "fullName") {
+    if (value.length < 3) {
+      errorSpan.textContent = "Name must be at least 3 characters long";
+      return false;
+    } else if (/[~`@#$%^*+=<>?/\\|.-]/.test(value)) {
+      errorSpan.textContent = "Name cannot contain special characters";
+      return false;
+    }else if (/[0-9]/.test(value)) {
+      errorSpan.textContent = "Name cannot contain digits";
+      return false;
+    }else if (value.split('').length < 0) {
+      errorSpan.textContent = "Name cannot be empty";
+      return false;
+    }
+  }
+
+  // Address validation
+  if (input.id === "address") {
+    if (value.length < 5) {
+      errorSpan.textContent = "Address too short";
+      return false;
+    } else if (/[~`@#$%^*+=<>?/\\|]/.test(value)) {
+      errorSpan.textContent = "Address cannot contain special characters";
+      return false;
+    }
+  }
+
+  return true;
+}
+
 
 function validateForm() {
   let isValid = true;
-  let emptyFields = [];
-
   requiredInputs.forEach(input => {
-    if (!input.value.trim()) {
+    if (!validateInput(input)) {
       isValid = false;
-      emptyFields.push(input.getAttribute('placeholder'));
     }
   });
 
-  if (isValid) {
-    placeOrderBtn.disabled = false;
-    placeOrderBtn.style.opacity = '1';
-    placeOrderBtn.style.cursor = 'pointer';
-  } else {
-    placeOrderBtn.disabled = true;
-    placeOrderBtn.style.opacity = '0.5';
-    placeOrderBtn.style.cursor = 'not-allowed';
-  }
+  placeOrderBtn.disabled = !isValid;
+  placeOrderBtn.style.opacity = isValid ? '1' : '0.5';
+  placeOrderBtn.style.cursor = isValid ? 'pointer' : 'not-allowed';
 
-  return { isValid, emptyFields };
+  return isValid;
 }
 
 requiredInputs.forEach(input => {
-  input.addEventListener('input', validateForm);
+  input.addEventListener('input', () => {
+    validateInput(input);
+    validateForm();
+  });
 });
+
+placeOrderBtn.disabled = true;
+placeOrderBtn.style.opacity = '0.5';
+placeOrderBtn.style.cursor = 'not-allowed';
 
 async function displayCart() {
   const tbody = document.getElementById('cart-items-table');
@@ -96,11 +152,10 @@ async function fetchCartFromBackend() {
   }
 }
 
+// === Place Order ===
 async function placeOrder() {
-  const validation = validateForm();
-
-  if (!validation.isValid) {
-    alert("Please fill all required fields!");
+  if (!validateForm()) {
+    alert("Please fill all required fields correctly!");
     return;
   }
 
@@ -123,6 +178,11 @@ async function placeOrder() {
 
     if (data.success) {
       showSuccessDialog();
+      checkoutForm.reset();
+      displayCart();
+      placeOrderBtn.disabled = true;
+      placeOrderBtn.style.opacity = '0.5';
+      placeOrderBtn.style.cursor = 'not-allowed';
     } else {
       alert('Error placing order: ' + (data.message || 'Unknown error'));
     }
@@ -147,7 +207,3 @@ placeOrderBtn.addEventListener('click', function (e) {
 });
 
 displayCart();
-
-function closePopup() {
-  document.getElementById("successPopup").style.display = "none";
-}

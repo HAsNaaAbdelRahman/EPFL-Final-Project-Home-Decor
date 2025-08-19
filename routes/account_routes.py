@@ -104,8 +104,8 @@ def account_routes(app):
                 return jsonify({'error': 'Invalid address'}), 400
             if len(phone) != 11:
                 return jsonify({'error': 'Phone number must be 11 digits'}), 400
-            if len(password) < 6:
-                return jsonify({'error': 'Password must be at least 6 characters'}), 400
+            if len(password) < 6 or not any(char.isdigit() for char in password) or not any(char.isalpha() for char in password) or not any(char in '~`@#$%^*+=<>?/\\|' for char in password):
+                return jsonify({'error': 'Password must be at least 6 characters,  at least one  uppercase, one lowercase, one digit, and one special character.'}), 400
 
             email_valid = email_validation(email)
 

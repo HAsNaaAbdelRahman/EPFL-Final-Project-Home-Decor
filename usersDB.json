@@ -2,42 +2,71 @@
     {
         "address": "Egypt",
         "cart": {
-            "3": 1
+            "4": 10
         },
         "email": "a02040456@gmail.com",
         "id": "bdcc7d66-eed0-4ccb-acaf-bb5471b78181",
         "name": "Hasnaa AbdelRahman",
-        "orders": [],
-        "password": "$2b$12$LXXqI9S2FkOalQR4UW0jSO9GnOpxWaREKvmveRgdYWytzPqkr1T2.",
-        "phone": "01127705139",
-        "security_question": "Black Swan"
-    },
-    {
-        "address": "Cairo, Egypt",
-        "cart": {},
-        "email": "dhasnaa70@gmail.com",
-        "id": "bdc14806-f0f9-47af-94b2-f2f9ea036c43",
-        "name": "Hasnaa Diab",
-        "orders": [],
-        "password": "$2b$12$Wg8YPUj5Lo5fJywElebgz.7ANdjVvbJJYK4fyY1h2Or2HrPwb.8i.",
-        "phone": "01196387416",
-        "security_question": "Love Story"
-    },
-    {
-        "address": "Cairo, Egypt",
-        "cart": {},
-        "email": "ahmed.m70@gmail.com",
-        "id": "1021863a-1558-4542-80b3-31265528a267",
-        "name": "Ahmed Mohammed",
         "orders": [
-            
             {
+                "cart": [
+                    {
+                        "id": "3",
+                        "name": "Melanie Wooden Vase",
+                        "price": 460,
+                        "quantity": 1,
+                        "thumbnail": "https://assets.weimgs.com/weimgs/rk/images/wcm/products/202322/0097/melanie-abrantes-hardwood-vase-tall-m.jpg"
+                    }
+                ],
                 "customerInfo": {
-                    "fullName": "Ahmed Mohamed",
-                    "email": "ahmed.m70@gmail.com",
-                    "phone": "0100311682",
-                    "address": "Egypt"
+                    "address": "Cairo, Egypt",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
                 },
+                "order_date": "18-Aug-2025 12:10 PM",
+                "order_id": "ORD-d8b452c4",
+                "shipping": 20,
+                "subtotal": 460,
+                "total": 480
+            },
+            {
+                "cart": [
+                    {
+                        "id": "21",
+                        "name": "Modern Dark Light Orb",
+                        "price": 150,
+                        "quantity": 1,
+                        "thumbnail": "https://www.ikea.com/ca/en/images/products/grindfallet-pendant-lamp-black__1057648_ph179181_s5.jpg?f=xs"
+                    },
+                    {
+                        "id": "20",
+                        "name": "Dark Light Orb",
+                        "price": 150,
+                        "quantity": 1,
+                        "thumbnail": "https://item-shopping.c.yimg.jp/i/n/elements_66902_16"
+                    },
+                    {
+                        "id": "19",
+                        "name": "Gold Light Orb",
+                        "price": 100,
+                        "quantity": 1,
+                        "thumbnail": "https://media.s-bol.com/BOnpBEql91Xk/lxlzNrg/550x550.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "208, El Maadi , Egypt",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
+                "order_date": "18-Aug-2025 01:34 PM",
+                "order_id": "ORD-8140223c",
+                "shipping": 20,
+                "subtotal": 400,
+                "total": 420
+            },
+            {
                 "cart": [
                     {
                         "id": "4",
@@ -61,15 +90,499 @@
                         "thumbnail": "https://assets.weimgs.com/weimgs/rk/images/wcm/products/202322/0097/melanie-abrantes-hardwood-vase-tall-m.jpg"
                     }
                 ],
-                "subtotal": 1310,
+                "customerInfo": {
+                    "address": "Cairo, Egypt",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
+                "order_date": "18-Aug-2025 01:47 PM",
+                "order_id": "ORD-e2efd6cd",
                 "shipping": 20,
-                "total": 1330,
+                "subtotal": 1310,
+                "total": 1330
+            },
+            {
+                "cart": [
+                    {
+                        "id": "5",
+                        "name": "Handcraft Wooden Vase",
+                        "price": 350,
+                        "quantity": 1,
+                        "thumbnail": "https://i.etsystatic.com/27150887/r/il/cbb5b3/3070159340/il_794xN.3070159340_67rt.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "Egypt",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
+                "order_date": "18-Aug-2025 01:48 PM",
+                "order_id": "ORD-47e93bf1",
+                "shipping": 20,
+                "subtotal": 350,
+                "total": 370
+            },
+            {
+                "cart": [
+                    {
+                        "id": "1",
+                        "name": "Asili Wooden Vase",
+                        "price": 405,
+                        "quantity": 2,
+                        "thumbnail": "https://www.magalis-egypt.com/cdn/shop/files/asili_1500x.webp?v=1693390735"
+                    },
+                    {
+                        "id": "3",
+                        "name": "Melanie Wooden Vase",
+                        "price": 460,
+                        "quantity": 1,
+                        "thumbnail": "https://assets.weimgs.com/weimgs/rk/images/wcm/products/202322/0097/melanie-abrantes-hardwood-vase-tall-m.jpg"
+                    },
+                    {
+                        "id": "5",
+                        "name": "Handcraft Wooden Vase",
+                        "price": 350,
+                        "quantity": 1,
+                        "thumbnail": "https://i.etsystatic.com/27150887/r/il/cbb5b3/3070159340/il_794xN.3070159340_67rt.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "Egypt",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
+                "order_date": "18-Aug-2025 03:02 PM",
+                "order_id": "ORD-58543c6c",
+                "shipping": 20,
+                "subtotal": 1620,
+                "total": 1640
+            },
+            {
+                "cart": [
+                    {
+                        "id": "1",
+                        "name": "Asili Wooden Vase",
+                        "price": 405,
+                        "quantity": 10,
+                        "thumbnail": "https://www.magalis-egypt.com/cdn/shop/files/asili_1500x.webp?v=1693390735"
+                    },
+                    {
+                        "id": "3",
+                        "name": "Melanie Wooden Vase",
+                        "price": 460,
+                        "quantity": 2,
+                        "thumbnail": "https://assets.weimgs.com/weimgs/rk/images/wcm/products/202322/0097/melanie-abrantes-hardwood-vase-tall-m.jpg"
+                    },
+                    {
+                        "id": "4",
+                        "name": "Miniature Wooden Vases",
+                        "price": 500,
+                        "quantity": 2,
+                        "thumbnail": "https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "Egypt",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
+                "order_date": "18-Aug-2025 03:18 PM",
+                "order_id": "ORD-18ea6c01",
+                "shipping": 20,
+                "subtotal": 5970,
+                "total": 5990
+            },
+            {
+                "cart": [
+                    {
+                        "id": "4",
+                        "name": "Miniature Wooden Vases",
+                        "price": 500,
+                        "quantity": 3,
+                        "thumbnail": "https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
+                    },
+                    {
+                        "id": "5",
+                        "name": "Handcraft Wooden Vase",
+                        "price": 350,
+                        "quantity": 7,
+                        "thumbnail": "https://i.etsystatic.com/27150887/r/il/cbb5b3/3070159340/il_794xN.3070159340_67rt.jpg"
+                    },
+                    {
+                        "id": "21",
+                        "name": "Modern Dark Light Orb",
+                        "price": 150,
+                        "quantity": 1,
+                        "thumbnail": "https://www.ikea.com/ca/en/images/products/grindfallet-pendant-lamp-black__1057648_ph179181_s5.jpg?f=xs"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "Alex, Egypt",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
+                "order_date": "18-Aug-2025 05:26 PM",
+                "order_id": "ORD-3706b09d",
+                "shipping": 20,
+                "subtotal": 4100,
+                "total": 4120
+            },
+            {
+                "cart": [
+                    {
+                        "id": "20",
+                        "name": "Dark Light Orb",
+                        "price": 150,
+                        "quantity": 1,
+                        "thumbnail": "https://item-shopping.c.yimg.jp/i/n/elements_66902_16"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "Cairo, Egypt",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
+                "order_date": "18-Aug-2025 05:42 PM",
+                "order_id": "ORD-30e0fb9b",
+                "shipping": 20,
+                "subtotal": 150,
+                "total": 170
+            },
+            {
+                "cart": [
+                    {
+                        "id": "4",
+                        "name": "Miniature Wooden Vases",
+                        "price": 500,
+                        "quantity": 10,
+                        "thumbnail": "https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
+                    },
+                    {
+                        "id": "9",
+                        "name": "Golden Menents",
+                        "price": 100,
+                        "quantity": 1,
+                        "thumbnail": "https://i.etsystatic.com/14624241/r/il/1caea2/5161772027/il_1080xN.5161772027_5rhm.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "Egypt",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
+                "order_date": "18-Aug-2025 05:59 PM",
+                "order_id": "ORD-5c730b3a",
+                "shipping": 20,
+                "subtotal": 5100,
+                "total": 5120
+            },
+            {
+                "cart": [
+                    {
+                        "id": "10",
+                        "name": "Large Boho Wall Art",
+                        "price": 500,
+                        "quantity": 1,
+                        "thumbnail": "https://m.media-amazon.com/images/I/81kJLTV1d9L.jpg"
+                    },
+                    {
+                        "id": "7",
+                        "name": "Abstract Fusion",
+                        "price": 250,
+                        "quantity": 1,
+                        "thumbnail": "https://www.magalis-egypt.com/cdn/shop/files/AbstractFusion_SetOf3_1_1080x.webp?v=1693161583"
+                    },
+                    {
+                        "id": "4",
+                        "name": "Miniature Wooden Vases",
+                        "price": 500,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
+                    },
+                    {
+                        "id": "6",
+                        "name": "Paulownia Wood Vase",
+                        "price": 150,
+                        "quantity": 2,
+                        "thumbnail": "https://cdn.shopify.com/s/files/1/0207/8508/products/001_PRD_2017.04.19-1.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "208 , degla El Maadii , Cairo",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
+                "order_date": "19-Aug-2025 10:08 AM",
+                "order_id": "ORD-09977cfe",
+                "shipping": 20,
+                "subtotal": 1550,
+                "total": 1570
+            },
+            {
+                "cart": [
+                    {
+                        "id": "3",
+                        "name": "Melanie Wooden Vase",
+                        "price": 460,
+                        "quantity": 1,
+                        "thumbnail": "https://assets.weimgs.com/weimgs/rk/images/wcm/products/202322/0097/melanie-abrantes-hardwood-vase-tall-m.jpg"
+                    },
+                    {
+                        "id": "4",
+                        "name": "Miniature Wooden Vases",
+                        "price": 500,
+                        "quantity": 2,
+                        "thumbnail": "https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "Egypt",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
+                "order_date": "19-Aug-2025 12:43 PM",
+                "order_id": "ORD-c30c2c1b",
+                "shipping": 20,
+                "subtotal": 1460,
+                "total": 1480
+            },
+            {
+                "cart": [
+                    {
+                        "id": "4",
+                        "name": "Miniature Wooden Vases",
+                        "price": 500,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
+                    },
+                    {
+                        "id": "17",
+                        "name": "Dark Classic Candles",
+                        "price": 60,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/1200x/4b/81/bf/4b81bfb45e83dc5e1ef108479de61bb3.jpg"
+                    },
+                    {
+                        "id": "16",
+                        "name": "Classic Candles",
+                        "price": 80,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/1200x/d2/40/e3/d240e303b1c018485bc2645131be230d.jpg"
+                    },
+                    {
+                        "id": "14",
+                        "name": "Ribbed Pillar Candles",
+                        "price": 150,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/736x/11/e4/22/11e4226359550a3acc4a23b522c2d90e.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "Cairo, Egypt",
+                    "email": "sara.ahmed@gmail.com",
+                    "fullName": "sara ahmed",
+                    "phone": "01527705139"
+                },
+                "order_date": "19-Aug-2025 02:38 PM",
+                "order_id": "ORD-822b1f5f",
+                "shipping": 20,
+                "subtotal": 790,
+                "total": 810
+            }
+        ],
+        "password": "$2b$12$LXXqI9S2FkOalQR4UW0jSO9GnOpxWaREKvmveRgdYWytzPqkr1T2.",
+        "phone": "01127705139",
+        "security_question": "Black Swan"
+    },
+    {
+        "address": "Cairo, Egypt",
+        "cart": {},
+        "email": "dhasnaa70@gmail.com",
+        "id": "bdc14806-f0f9-47af-94b2-f2f9ea036c43",
+        "name": "Hasnaa Diab",
+        "orders": [],
+        "password": "$2b$12$Wg8YPUj5Lo5fJywElebgz.7ANdjVvbJJYK4fyY1h2Or2HrPwb.8i.",
+        "phone": "01196387416",
+        "security_question": "Love Story"
+    },
+    {
+        "address": "Cairo, Egypt",
+        "cart": {},
+        "email": "ahmed.m70@gmail.com",
+        "id": "1021863a-1558-4542-80b3-31265528a267",
+        "name": "Ahmed Mohammed",
+        "orders": [
+            {
+                "cart": [
+                    {
+                        "id": "4",
+                        "name": "Miniature Wooden Vases",
+                        "price": 500,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
+                    },
+                    {
+                        "id": "5",
+                        "name": "Handcraft Wooden Vase",
+                        "price": 350,
+                        "quantity": 1,
+                        "thumbnail": "https://i.etsystatic.com/27150887/r/il/cbb5b3/3070159340/il_794xN.3070159340_67rt.jpg"
+                    },
+                    {
+                        "id": "3",
+                        "name": "Melanie Wooden Vase",
+                        "price": 460,
+                        "quantity": 1,
+                        "thumbnail": "https://assets.weimgs.com/weimgs/rk/images/wcm/products/202322/0097/melanie-abrantes-hardwood-vase-tall-m.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "Egypt",
+                    "email": "ahmed.m70@gmail.com",
+                    "fullName": "Ahmed Mohamed",
+                    "phone": "0100311682"
+                },
                 "order_date": "18-Aug-2025 05:30 AM",
-                "order_id": "ORD-0fe1ee21"
+                "order_id": "ORD-0fe1ee21",
+                "shipping": 20,
+                "subtotal": 1310,
+                "total": 1330
             }
         ],
         "password": "$2b$12$nfk9OL5QRhG3Tc/Kkg0t.ub5A260C4gO2jxXMKtkNWSKreLIKrUYC",
         "phone": "01028946323",
         "security_question": "Dragons"
+    },
+    {
+        "address": "Cairo, Egypt",
+        "cart": {},
+        "email": "ahmed.m0@gmail.com",
+        "id": "195e0128-2987-4920-b3e9-21fc9f228c3e",
+        "name": "Ahmed Mohammed",
+        "orders": [
+            {
+                "cart": [
+                    {
+                        "id": "19",
+                        "name": "Gold Light Orb",
+                        "price": 100,
+                        "quantity": 1,
+                        "thumbnail": "https://media.s-bol.com/BOnpBEql91Xk/lxlzNrg/550x550.jpg"
+                    },
+                    {
+                        "id": "20",
+                        "name": "Dark Light Orb",
+                        "price": 150,
+                        "quantity": 1,
+                        "thumbnail": "https://item-shopping.c.yimg.jp/i/n/elements_66902_16"
+                    },
+                    {
+                        "id": "21",
+                        "name": "Modern Dark Light Orb",
+                        "price": 150,
+                        "quantity": 1,
+                        "thumbnail": "https://www.ikea.com/ca/en/images/products/grindfallet-pendant-lamp-black__1057648_ph179181_s5.jpg?f=xs"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "206, El Maadi , Cairo",
+                    "email": "ahmed.m0@gmail.com",
+                    "fullName": "Ahmed Mohamed",
+                    "phone": "01069874541"
+                },
+                "order_date": "18-Aug-2025 01:53 PM",
+                "order_id": "ORD-9bacc57a",
+                "shipping": 20,
+                "subtotal": 400,
+                "total": 420
+            }
+        ],
+        "password": "$2b$12$1Ek.kWoSeOq0LCrOBWhSVeAE9J6f7UMMRlap0sIPMkH4ujJHlDek.",
+        "phone": "01028946323",
+        "security_question": "Dragons"
+    },
+    {
+        "address": "Cairo, Egypt",
+        "cart": {},
+        "email": "adham.yasser@gmail.com",
+        "id": "42ffb335-61e8-4c40-b473-8c369b0333ed",
+        "name": "Adham Yasser",
+        "orders": [
+            {
+                "cart": [
+                    {
+                        "id": "13",
+                        "name": "Wedding Candles",
+                        "price": 200,
+                        "quantity": 1,
+                        "thumbnail": "https://pink-book.co.za/wp-content/uploads/2022/10/wedding-decor-2023-2.png"
+                    },
+                    {
+                        "id": "12",
+                        "name": "Mid Century Modern",
+                        "price": 450,
+                        "quantity": 1,
+                        "thumbnail": "https://i.etsystatic.com/13304056/r/il/d4205a/3358293774/il_794xN.3358293774_b647.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "Cairo, Egypt",
+                    "email": "adham.yasser@gmail.com",
+                    "fullName": "adham yasser",
+                    "phone": "01298745631"
+                },
+                "order_date": "19-Aug-2025 10:19 AM",
+                "order_id": "ORD-b9c2dcc1",
+                "shipping": 20,
+                "subtotal": 650,
+                "total": 670
+            }
+        ],
+        "password": "$2b$12$9/q7rgNyehahEfiwRhHni.iEtbULYB81c/UARVj8q.tlWv67BFS1q",
+        "phone": "01527705139",
+        "security_question": "KARMA"
+    },
+    {
+        "address": "Cairo, Egypt",
+        "cart": {},
+        "email": "sara.ahmed@gmail.com",
+        "id": "3162298e-d2b2-4ad0-8b64-e7fbf1c6404f",
+        "name": "Sara Ahmed",
+        "orders": [
+            {
+                "cart": [
+                    {
+                        "id": "4",
+                        "name": "Miniature Wooden Vases",
+                        "price": 500,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "250 Degla , El maadi , cairo",
+                    "email": "sara.ahmed@gmail.com",
+                    "fullName": "sara ahmed",
+                    "phone": "01527705139"
+                },
+                "order_date": "19-Aug-2025 02:12 PM",
+                "order_id": "ORD-84183325",
+                "shipping": 20,
+                "subtotal": 500,
+                "total": 520
+            }
+        ],
+        "password": "$2b$12$E4cT1G.swDBhC.ziY7DTqO0X3nq/867tYmBb.DcNyILdGDsG7Fp0.",
+        "phone": "01527705139",
+        "security_question": "KARMA"
     }
 ]

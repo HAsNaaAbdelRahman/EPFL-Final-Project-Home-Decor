@@ -66,7 +66,11 @@
 .success-dialog button:hover {
   background: #1d3b3b; 
 }
-
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
 .checkout__form {
     max-width: 600px;
     background: var(--white);

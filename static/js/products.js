@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const productGrid = document.querySelector('.product___grid');
     const filterButtons = document.querySelectorAll('.filter__btn');
 
+    
+
+
     function sanitizeQuantity(inputElement) {
         let val = inputElement.value.replace(/\D/g, ""); 
         val = parseInt(val);
@@ -76,12 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const result = await response.json();
                     if (result.success) {
-                        showNotification(result.message || `Added ${quantity} to cart!`);
+            alert(result.message || `Added ${quantity} to cart!`);
                    } else {
-                        showNotification(result.error || 'Failed to add product to cart.', 'error');
+                       showNotification(result.error || 'Failed to add product to cart.', 'error');
                     }
                 } catch (error) {
-                    console.error('Error:', error);
                     showNotification('Failed to add product to cart.', 'error');
                 }
             });
@@ -99,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(data.error || 'Failed to load products');
             }
         } catch (error) {
-            console.error('Error:', error);
             productGrid.innerHTML = `
                 <div class="error-message">
                     <p>Error loading products. Please try again later.</p>

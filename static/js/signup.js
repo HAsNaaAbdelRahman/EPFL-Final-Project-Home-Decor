@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function validatePassword(password) {
-        return password.trim().length >= 6;
+        return password.trim().length >= 6 && /[~`@#$%^*+=<>?/\\|]/.test(password) && /[a-z]/.test(password) && /[A-Z]/.test(password) && /[0-9]/.test(password);
     }
 
     function validateAddress(address) {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (!validatePassword(inputs.password.value)) {
-            errorElements.password.textContent = 'Password must be at least 6 characters';
+            errorElements.password.textContent = 'Password must be at least 6 characters, include one uppercase, one lowercase, one digit, and one special character.';
             errorElements.password.style.display = 'block';
             isValid = false;
         }
