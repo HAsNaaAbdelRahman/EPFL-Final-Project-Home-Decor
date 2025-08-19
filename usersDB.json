@@ -1,7 +1,9 @@
 [
     {
         "address": "Egypt",
-        "cart": {},
+        "cart": {
+            "4": 10
+        },
         "email": "a02040456@gmail.com",
         "id": "bdcc7d66-eed0-4ccb-acaf-bb5471b78181",
         "name": "Hasnaa AbdelRahman",
@@ -253,12 +255,6 @@
                 "total": 170
             },
             {
-                "customerInfo": {
-                    "fullName": "Hasnaa AbdelRahman",
-                    "email": "a02040456@gmail.com",
-                    "phone": "01127705139",
-                    "address": "Egypt"
-                },
                 "cart": [
                     {
                         "id": "4",
@@ -275,19 +271,19 @@
                         "thumbnail": "https://i.etsystatic.com/14624241/r/il/1caea2/5161772027/il_1080xN.5161772027_5rhm.jpg"
                     }
                 ],
-                "subtotal": 5100,
-                "shipping": 20,
-                "total": 5120,
+                "customerInfo": {
+                    "address": "Egypt",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
                 "order_date": "18-Aug-2025 05:59 PM",
-                "order_id": "ORD-5c730b3a"
+                "order_id": "ORD-5c730b3a",
+                "shipping": 20,
+                "subtotal": 5100,
+                "total": 5120
             },
             {
-                "customerInfo": {
-                    "fullName": "Hasnaa AbdelRahman",
-                    "email": "a02040456@gmail.com",
-                    "phone": "01127705139",
-                    "address": "208 , degla El Maadii , Cairo"
-                },
                 "cart": [
                     {
                         "id": "10",
@@ -318,11 +314,89 @@
                         "thumbnail": "https://cdn.shopify.com/s/files/1/0207/8508/products/001_PRD_2017.04.19-1.jpg"
                     }
                 ],
-                "subtotal": 1550,
-                "shipping": 20,
-                "total": 1570,
+                "customerInfo": {
+                    "address": "208 , degla El Maadii , Cairo",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
                 "order_date": "19-Aug-2025 10:08 AM",
-                "order_id": "ORD-09977cfe"
+                "order_id": "ORD-09977cfe",
+                "shipping": 20,
+                "subtotal": 1550,
+                "total": 1570
+            },
+            {
+                "cart": [
+                    {
+                        "id": "3",
+                        "name": "Melanie Wooden Vase",
+                        "price": 460,
+                        "quantity": 1,
+                        "thumbnail": "https://assets.weimgs.com/weimgs/rk/images/wcm/products/202322/0097/melanie-abrantes-hardwood-vase-tall-m.jpg"
+                    },
+                    {
+                        "id": "4",
+                        "name": "Miniature Wooden Vases",
+                        "price": 500,
+                        "quantity": 2,
+                        "thumbnail": "https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "Egypt",
+                    "email": "a02040456@gmail.com",
+                    "fullName": "Hasnaa AbdelRahman",
+                    "phone": "01127705139"
+                },
+                "order_date": "19-Aug-2025 12:43 PM",
+                "order_id": "ORD-c30c2c1b",
+                "shipping": 20,
+                "subtotal": 1460,
+                "total": 1480
+            },
+            {
+                "cart": [
+                    {
+                        "id": "4",
+                        "name": "Miniature Wooden Vases",
+                        "price": 500,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
+                    },
+                    {
+                        "id": "17",
+                        "name": "Dark Classic Candles",
+                        "price": 60,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/1200x/4b/81/bf/4b81bfb45e83dc5e1ef108479de61bb3.jpg"
+                    },
+                    {
+                        "id": "16",
+                        "name": "Classic Candles",
+                        "price": 80,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/1200x/d2/40/e3/d240e303b1c018485bc2645131be230d.jpg"
+                    },
+                    {
+                        "id": "14",
+                        "name": "Ribbed Pillar Candles",
+                        "price": 150,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/736x/11/e4/22/11e4226359550a3acc4a23b522c2d90e.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "Cairo, Egypt",
+                    "email": "sara.ahmed@gmail.com",
+                    "fullName": "sara ahmed",
+                    "phone": "01527705139"
+                },
+                "order_date": "19-Aug-2025 02:38 PM",
+                "order_id": "ORD-822b1f5f",
+                "shipping": 20,
+                "subtotal": 790,
+                "total": 810
             }
         ],
         "password": "$2b$12$LXXqI9S2FkOalQR4UW0jSO9GnOpxWaREKvmveRgdYWytzPqkr1T2.",
@@ -437,22 +511,13 @@
         "security_question": "Dragons"
     },
     {
+        "address": "Cairo, Egypt",
+        "cart": {},
+        "email": "adham.yasser@gmail.com",
         "id": "42ffb335-61e8-4c40-b473-8c369b0333ed",
         "name": "Adham Yasser",
-        "email": "adham.yasser@gmail.com",
-        "password": "$2b$12$9/q7rgNyehahEfiwRhHni.iEtbULYB81c/UARVj8q.tlWv67BFS1q",
-        "address": "Cairo, Egypt",
-        "phone": "01527705139",
-        "security_question": "KARMA",
-        "cart": {},
         "orders": [
             {
-                "customerInfo": {
-                    "fullName": "adham yasser",
-                    "email": "adham.yasser@gmail.com",
-                    "phone": "01298745631",
-                    "address": "Cairo, Egypt"
-                },
                 "cart": [
                     {
                         "id": "13",
@@ -469,12 +534,55 @@
                         "thumbnail": "https://i.etsystatic.com/13304056/r/il/d4205a/3358293774/il_794xN.3358293774_b647.jpg"
                     }
                 ],
-                "subtotal": 650,
-                "shipping": 20,
-                "total": 670,
+                "customerInfo": {
+                    "address": "Cairo, Egypt",
+                    "email": "adham.yasser@gmail.com",
+                    "fullName": "adham yasser",
+                    "phone": "01298745631"
+                },
                 "order_date": "19-Aug-2025 10:19 AM",
-                "order_id": "ORD-b9c2dcc1"
+                "order_id": "ORD-b9c2dcc1",
+                "shipping": 20,
+                "subtotal": 650,
+                "total": 670
             }
-        ]
+        ],
+        "password": "$2b$12$9/q7rgNyehahEfiwRhHni.iEtbULYB81c/UARVj8q.tlWv67BFS1q",
+        "phone": "01527705139",
+        "security_question": "KARMA"
+    },
+    {
+        "address": "Cairo, Egypt",
+        "cart": {},
+        "email": "sara.ahmed@gmail.com",
+        "id": "3162298e-d2b2-4ad0-8b64-e7fbf1c6404f",
+        "name": "Sara Ahmed",
+        "orders": [
+            {
+                "cart": [
+                    {
+                        "id": "4",
+                        "name": "Miniature Wooden Vases",
+                        "price": 500,
+                        "quantity": 1,
+                        "thumbnail": "https://i.pinimg.com/736x/0f/0b/9e/0f0b9e9ab10a75f9d4f083dd2611c07c.jpg"
+                    }
+                ],
+                "customerInfo": {
+                    "address": "250 Degla , El maadi , cairo",
+                    "email": "sara.ahmed@gmail.com",
+                    "fullName": "sara ahmed",
+                    "phone": "01527705139"
+                },
+                "order_date": "19-Aug-2025 02:12 PM",
+                "order_id": "ORD-84183325",
+                "shipping": 20,
+                "subtotal": 500,
+                "total": 520
+            }
+        ],
+        "password": "$2b$12$E4cT1G.swDBhC.ziY7DTqO0X3nq/867tYmBb.DcNyILdGDsG7Fp0.",
+        "phone": "01527705139",
+        "security_question": "KARMA"
     }
 ]
