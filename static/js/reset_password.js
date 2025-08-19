@@ -13,9 +13,9 @@
         return;
       }
 
-      if (newPass.value.trim().length < 6) {
+      if (newPass.value.trim().length < 6 || !/[~`@#$%^*+=<>?/\\|]/.test(newPass.value) || !/[a-z]/.test(newPass.value) || !/[A-Z]/.test(newPass.value) || !/[0-9]/.test(newPass.value)) {
         event.preventDefault();
-        errorMessage.textContent = "Password must be at least 6 characters long!";
+        errorMessage.textContent = "Password must be at least 6 characters,  at least one  uppercase, one lowercase, one digit, and one special character.";
         newPass.focus();
         return;
       }

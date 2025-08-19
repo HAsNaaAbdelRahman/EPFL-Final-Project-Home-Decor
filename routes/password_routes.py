@@ -64,8 +64,9 @@ def password_op(app):
                 error = "All fields are required"
             elif new_password != confirm_password:
                 error = "Passwords do not match"
-            elif len(new_password) < 6:
-                error = "Password must be at least 6 characters long"
+            elif len(new_password) < 6 or not any(char.isdigit() for char in new_password) or not any(char.isalpha() for char in new_password) or not any(char in '~`@#$%^*+=<>?/\\|' for char in new_password):
+                return jsonify({'error': 'Password must be at least 6 characters,  at least one  uppercase, one lowercase, one digit, and one special character.'}), 400
+
             else:
                 users = load_users()
                 for user in users:
