@@ -43,7 +43,7 @@ def cart(app):
         except Exception as e:
             return jsonify({"cart": [], "subtotal": 0})
 
-    @app.route('/remove_from_cart', methods=['POST'])
+    @app.route('/remove_from_cart', methods=['DELETE'])
     def remove_from_cart():
         if not session.get('user_id'):
             return jsonify({"success": False, "error": "You need to be logged in"}), 403
@@ -68,7 +68,7 @@ def cart(app):
         except Exception as e:
             return jsonify({"success": False, "error": str(e)}), 500
 
-    @app.route('/update_cart_quantity', methods=['POST'])
+    @app.route('/update_cart_quantity', methods=['PUT'])
     def update_cart_quantity():
         if not session.get('user_id'):
             return jsonify({"success": False, "error": "You need to be logged in"}), 403

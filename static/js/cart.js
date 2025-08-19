@@ -72,7 +72,7 @@ function displayCartItems(cartItems, subtotal) {
 async function updateQuantity(productId, quantity) {
     try {
         await fetch('/update_cart_quantity', {
-            method: 'POST',
+            method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ product_id: productId, quantity: quantity })
         });
@@ -86,7 +86,7 @@ async function updateQuantity(productId, quantity) {
 async function removeItem(productId) {
     try {
         await fetch('/remove_from_cart', {
-            method: 'POST',
+            method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ product_id: productId })
         });
